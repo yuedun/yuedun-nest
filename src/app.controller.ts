@@ -6,16 +6,7 @@ export class AppController {
     constructor(private readonly appService: AppService) {}
 
     @Get()
-    root(@Query() query): string {
-        console.log(query.aaa);
-        console.log('>>>>root');
-
-        return this.appService.root();
-    }
-    @Get()
-    index(): string {
-        console.log('>>>>>>>index');
-
+    root(): string {
         return this.appService.root();
     }
 }
