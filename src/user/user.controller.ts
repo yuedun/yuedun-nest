@@ -1,13 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpException, HttpStatus, Render } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.entity';
+import { Article } from 'article/article.entity';
 
 @Controller('user')
 export class UserController {
     constructor(private readonly userService: UserService) {}
 
     @Get()
-    findAll(): Promise<User[]> {
+    @Render('index.njk')
+    findAll(): Promise<{ user: User[]; article?: Article[] }> {
+        // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
+        console.log(">>>>>>");
+        
         return this.userService.findAll();
     }
 }
+ 
