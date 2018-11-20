@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PaymentController } from './payment.controller';
+import { LogController } from './log.controller';
 
 describe('Payment Controller', () => {
   let module: TestingModule;
   beforeAll(async () => {
     module = await Test.createTestingModule({
-      controllers: [PaymentController],
+      controllers: [LogController],
     }).compile();
   });
   it('should be defined', () => {
-    const controller: PaymentController = module.get<PaymentController>(PaymentController);
+    const controller: LogController = module.get<LogController>(LogController);
     expect(controller).toBeDefined();
   });
 });

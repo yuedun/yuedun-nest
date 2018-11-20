@@ -4,9 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { ArticleModule } from './article/article.module';
-import { PaymentController } from './payment/payment.controller';
-import { PaymentService } from './payment/payment.service';
-import { PaymentModule } from './payment/payment.module';
+import { LogController } from './log/log.controller';
+import { LogService } from './log/log.service';
+import { LogModule } from './log/log.module';
 
 /**
  *根模块，必须。可以导入其他模块。具有Module装饰器的类称之为模块。
@@ -29,9 +29,9 @@ import { PaymentModule } from './payment/payment.module';
         }),
         UserModule,
         ArticleModule,
-        PaymentModule,
+        LogModule,
     ], //导入模块所需的导入模块列表
-    controllers: [AppController, PaymentController], //必须创建的一组控制器
-    providers: [AppService, PaymentService], //由 Nest 注入器实例化的提供者，并且可以至少在整个模块中共享
+    controllers: [AppController, LogController], //必须创建的一组控制器
+    providers: [AppService, LogService], //由 Nest 注入器实例化的提供者，并且可以至少在整个模块中共享
 })
 export class AppModule {}
