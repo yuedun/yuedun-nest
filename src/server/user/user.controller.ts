@@ -11,8 +11,6 @@ export class UserController {
     @Render('index.njk')
     findAll(): Promise<{ user: User[]; article?: Article[] }> {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
-        console.log('>>>>>>');
-
         return this.userService.findAll();
     }
 }

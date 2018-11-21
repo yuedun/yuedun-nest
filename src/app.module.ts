@@ -8,7 +8,7 @@ import { LogController } from './server/log/log.controller';
 import { LogService } from './server/log/log.service';
 import { LogModule } from './server/log/log.module';
 import { DatabaseModule } from './database/database.module';
-import LoggerMiddleware from 'middlewares/logger.middleware';
+import { LoggerMiddleware } from './middlewares/logger.middleware';
 
 /**
  * 根模块，必须。可以导入其他模块。具有Module装饰器的类称之为模块。
@@ -38,8 +38,8 @@ import LoggerMiddleware from 'middlewares/logger.middleware';
     providers: [AppService, LogService], // 由 Nest 注入器实例化的提供者，并且可以在整个模块中共享
 })
 export class AppModule implements NestModule {
-    configure(consumer:MiddlewareConsumer){
+    configure(consumer: MiddlewareConsumer) {
         consumer.apply(LoggerMiddleware)
-        .forRoutes('/*')
+            .forRoutes('/*')
     }
 }
