@@ -15,14 +15,14 @@ $ npm install
 $ npm run start
 
 # watch mode
-$ npm run start:dev
+$ npm run dev
 
 # incremental rebuild (webpack)
 $ npm run webpack
-$ npm run start:hmr
+$ npm run hmr
 
 # production mode
-$ npm run start:prod
+$ npm run prod
 ```
 
 ## Test
@@ -49,6 +49,17 @@ $ nest g service cats/cats
 
 #创建module
 $ nest g module cats
+```
+
+## debug
+
+```bash
+# chrome devtool
+$ npm run debug
+
+# vscode（推荐）
+> 按F5即可
+
 ```
 
 ## License

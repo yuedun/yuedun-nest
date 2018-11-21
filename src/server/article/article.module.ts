@@ -8,6 +8,6 @@ import { Article } from './article.entity';
     imports: [TypeOrmModule.forFeature([Article])],
     providers: [ArticleService, ArticleController],
     controllers: [ArticleController],
-    exports: [ArticleService], //导出以后才能被其他模块导入
+    exports: [ArticleService], // 导出以后才能被其他模块导入
 })
 export class ArticleModule {}

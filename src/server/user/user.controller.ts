@@ -3,7 +3,6 @@ import { UserService } from './user.service';
 import { User } from './user.entity';
 import { Article } from '../article/article.entity';
 
-
 @Controller('user')
 export class UserController {
     constructor(private readonly userService: UserService) {}
@@ -12,9 +11,8 @@ export class UserController {
     @Render('index.njk')
     findAll(): Promise<{ user: User[]; article?: Article[] }> {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
-        console.log(">>>>>>");
-        
+        console.log('>>>>>>');
+
         return this.userService.findAll();
     }
 }
- 

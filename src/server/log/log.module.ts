@@ -8,6 +8,6 @@ import { DatabaseModule } from '../../database/database.module';
     imports: [DatabaseModule],
     controllers: [LogController],
     providers: [LogService, ...logProviders],
-    exports: [...logProviders]
+    exports: [...logProviders],
 })
 export class LogModule { }
