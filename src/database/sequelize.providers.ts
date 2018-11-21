@@ -1,9 +1,9 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Log } from '../log/log.entity';
+import { Log } from '../server/log/log.entity';
 
 export const databaseProviders = [
     {
-        provide: 'SequelizeToken',
+        provide: 'Sequelize',
         useFactory: async () => {
             const sequelize = new Sequelize({
                 operatorsAliases: false,

@@ -1,7 +1,8 @@
 import { Controller, Get, HttpException, HttpStatus, Render } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.entity';
-import { Article } from 'article/article.entity';
+import { Article } from '../article/article.entity';
+
 
 @Controller('user')
 export class UserController {

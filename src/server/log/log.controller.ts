@@ -10,4 +10,8 @@ export class LogController {
     async findAll(): Promise<Log[]> {
         return await this.logService.getLogs();
     }
+    @Get('query')
+    async findAllBySql(): Promise<Log[]> {
+        return await this.logService.queryBySql();
+    }
 }
