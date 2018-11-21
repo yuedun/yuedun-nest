@@ -6,12 +6,18 @@
     "configurations": [
         {
             "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 9229,
+            "restart": true
+        },
+        {
+            "type": "node",
             "request": "launch",
             "name": "Nest Debug",
             "args": ["${workspaceFolder}/src/main.ts"],
             "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
             "console": "integratedTerminal",
-            "restart": true,
             "sourceMaps": true,
             "cwd": "${workspaceFolder}"
         }
