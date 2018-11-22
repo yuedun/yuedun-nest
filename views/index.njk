@@ -9,11 +9,14 @@
 </head>
 
 <body>
+    {% extends "parent.njk" %}
+    {% block center %}
     <ul>
         {% for item in user %}
         <li>{{ item.user_name }}: {{ item.description }}</li>
         {% endfor %}
     </ul>
+    {% endblock center %}
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { ArticleService } from './article.service';
-import { Article } from './article.entity';
+import { default as Article } from './article.entity';
 
 @Controller('article')
 export class ArticleController {

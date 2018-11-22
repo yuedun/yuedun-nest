@@ -1,22 +1,25 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Table, Column, Model, PrimaryKey } from 'sequelize-typescript';
 
-@Entity('article')
-export class Article {
-    @PrimaryGeneratedColumn()
+@Table({
+    
+})
+export default class Article extends Model<Article>{
+    @PrimaryKey
+    @Column
     id: number;
 
-    @Column({ length: 500 })
+    @Column
     user_name: string;
 
-    @Column('text')
+    @Column
     description: string;
 
-    @Column('text')
+    @Column
     mobile: string;
 
-    @Column('text')
+    @Column
     email: string;
 
-    @Column()
+    @Column
     status: boolean;
 }

@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-const nunjucks = require('nunjucks');
+import nunjucks = require('nunjucks');
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);

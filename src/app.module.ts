@@ -18,17 +18,6 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
  */
 @Module({
     imports: [
-        TypeOrmModule.forRoot({
-            type: 'mysql',
-            host: 'localhost',
-            port: 3306,
-            username: 'root',
-            password: 'root',
-            database: 'issue',
-            entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-            synchronize: true,
-            logging: true, // 控制台输出日志
-        }),
         DatabaseModule,
         UserModule,
         ArticleModule,
@@ -40,6 +29,7 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer.apply(LoggerMiddleware)
+        .with("中间件参数")
             .forRoutes('/*')
     }
 }
