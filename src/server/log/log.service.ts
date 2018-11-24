@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Log } from './log.entity';
+import { default as Log } from './log.entity';
 import { Sequelize } from 'sequelize';
 
 @Injectable()

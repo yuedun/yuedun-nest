@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { LogService } from './log.service';
-import { Log } from './log.entity';
+import { default as Log } from './log.entity';
 
 @Controller('log')
 export class LogController {
