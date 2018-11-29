@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseFilters, HttpException } from '@nestjs/common';
 import { LogService } from './log.service';
 import { default as Log } from './log.entity';
 
@@ -8,7 +8,8 @@ export class LogController {
 
     @Get()
     async findAll(): Promise<Log[]> {
-        return await this.logService.getLogs();
+        // throw new HttpException('httpexception', 500);
+        return await this.logService.getLogs(1);
     }
     @Get('query')
     async findAllBySql(): Promise<Log[]> {
