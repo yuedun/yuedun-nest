@@ -14,11 +14,18 @@ export class HttpExceptionFilter implements ExceptionFilter {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const request = ctx.getRequest();
+        console.log('>>>http-exception.filter');
+        let statusCode = 1;
+        let message = exception.message;
+        if (exception instanceof HttpException) {
+            statusCode = exception.getStatus();
+            message = exception.message.message;
+        }
         //处理了异常同时记录日志
         response
             .json({
-                code: 1,
-                message: exception.message,
+                code: statusCode,
+                message,
                 path: request.url,
             });
     }

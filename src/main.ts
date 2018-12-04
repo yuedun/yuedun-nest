@@ -3,13 +3,15 @@ import { AppModule } from './app.module';
 import nunjucks = require('nunjucks');
 import { MyLogger } from './libs/mylog.service';
 import { HttpExceptionFilter } from './middlewares/http-exception.filter';
-import { TransformInterceptor } from 'middlewares/transform.interceptor';
+import { TransformInterceptor } from './middlewares/transform.interceptor';
+import { AuthGuard } from './middlewares/auth.guard';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule, {
         logger: false
     });
     app.useLogger(app.get(MyLogger));
+    app.useGlobalGuards(new AuthGuard());
     app.useGlobalFilters(new HttpExceptionFilter());
     app.useGlobalInterceptors(new TransformInterceptor());
     app.useStaticAssets(__dirname + '/public');
