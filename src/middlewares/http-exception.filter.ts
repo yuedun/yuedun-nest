@@ -23,6 +23,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
         }
         //处理了异常同时记录日志
         response
+            .status(statusCode)
             .json({
                 code: statusCode,
                 message,

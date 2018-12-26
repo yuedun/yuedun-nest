@@ -7,8 +7,7 @@ export class LoggerMiddleware implements NestMiddleware {
         return (req, res, next) => {
             console.log('>>>logger.middlerware Before');
             next();
-            console.log('>>>logger.middlerware After');
-            
+            console.log('>>>logger.middlerware After\n\r');
         };
     }
 }
