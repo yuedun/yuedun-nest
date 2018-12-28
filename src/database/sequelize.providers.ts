@@ -18,7 +18,7 @@ export const databaseProviders = [
                 // modelPaths: [__dirname + '/../**/*.entity.ts'],//这3中方式都可以，需要model export default
             });
             // sequelize.addModels([Log, User, Article]);//这3中方式都可以
-            sequelize.addModels([__dirname + '/../**/*.entity.ts']);//这3中方式都可以，需要model export default
+            sequelize.addModels([__dirname + '/../**/*.entity.ts']); // 这3中方式都可以，需要model export default
             await sequelize.sync();
             return sequelize;
         },

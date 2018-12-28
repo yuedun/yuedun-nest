@@ -1,4 +1,9 @@
-import { Module, MiddlewareConsumer, NestModule, HttpModule } from '@nestjs/common';
+import {
+    Module,
+    MiddlewareConsumer,
+    NestModule,
+    HttpModule,
+} from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './server/user/user.module';
@@ -31,8 +36,9 @@ import { MyLogger } from './libs/mylog.service';
 })
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
-        consumer.apply(LoggerMiddleware)
-        .with("中间件参数")
-            .forRoutes('/*')
+        consumer
+            .apply(LoggerMiddleware)
+            .with('中间件参数')
+            .forRoutes('/*');
     }
 }

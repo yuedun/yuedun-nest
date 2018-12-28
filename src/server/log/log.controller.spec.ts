@@ -25,12 +25,12 @@ describe('LogService', () => {
     let service: LogService;
     beforeAll(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            imports:[LogModule]
+            imports: [LogModule],
         }).compile();
         service = module.get<LogService>(LogService);
     });
     it('should be defined', () => {
-        expect(service).toBeDefined()
+        expect(service).toBeDefined();
     });
     it('get data', async () => {
         let data = await service.queryBySql();

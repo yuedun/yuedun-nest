@@ -9,14 +9,20 @@ export interface Response<T> {
 }
 
 @Injectable()
-export class TransformInterceptor<T> implements NestInterceptor<T, Response<T>> {
-    intercept(context: ExecutionContext, call$: Observable<T>, ): Observable<Response<T>> {
-        console.log(">>>trasform.interceptor");
-        
-        return call$.pipe(map(data => ({
-            code: 0,
-            data,
-            message: ''
-        })));
+export class TransformInterceptor<T>
+    implements NestInterceptor<T, Response<T>> {
+    intercept(
+        context: ExecutionContext,
+        call$: Observable<T>,
+    ): Observable<Response<T>> {
+        console.log('>>>trasform.interceptor');
+
+        return call$.pipe(
+            map(data => ({
+                code: 0,
+                data,
+                message: '',
+            })),
+        );
     }
 }

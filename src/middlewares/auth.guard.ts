@@ -14,10 +14,10 @@ export class AuthGuard implements CanActivate {
         context: ExecutionContext,
     ): boolean | Promise<boolean> | Observable<boolean> {
         console.log('>>>auth.guard');
-        
+
         const request = context.switchToHttp().getRequest();
-        let auth:boolean = !!Number(request.query.auth);
-        
+        const auth: boolean = !!Number(request.query.auth);
+
         return auth;
     }
 }

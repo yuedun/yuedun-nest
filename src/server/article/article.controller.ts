@@ -9,12 +9,12 @@ export class ArticleController {
     constructor(
         private readonly articleService: ArticleService,
         private readonly httpServiece: HttpService,
-        private readonly logger: MyLogger
-    ) { }
+        private readonly logger: MyLogger,
+    ) {}
 
     @Get()
     findAll(): Promise<Article[]> | Observable<any> {
-        this.logger.log(">>>>>>>>>>>>>>")
+        this.logger.log('>>>>>>>>>>>>>>');
         return this.articleService.findAll();
     }
 }

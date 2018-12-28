@@ -5,16 +5,16 @@ import { default as Article } from './article.entity';
 import { LoggerModule } from '../../libs/mylog.module';
 
 const articleProviders = [
-	{
-		provide: 'ArticleRepository',
-		useValue: Article,
-	},
+    {
+        provide: 'ArticleRepository',
+        useValue: Article,
+    },
 ];
 
 @Module({
-	imports:[HttpModule, LoggerModule],
+    imports: [HttpModule, LoggerModule],
     providers: [ArticleService, ...articleProviders],
     controllers: [ArticleController],
-    exports: [ArticleService,...articleProviders], // 导出以后才能被其他模块导入
+    exports: [ArticleService, ...articleProviders], // 导出以后才能被其他模块导入
 })
 export class ArticleModule {}

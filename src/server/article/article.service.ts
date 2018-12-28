@@ -4,7 +4,8 @@ import { default as Article } from './article.entity';
 @Injectable()
 export class ArticleService {
     constructor(
-        @Inject('ArticleRepository') private readonly articleRepository: typeof Article,
+        @Inject('ArticleRepository')
+        private readonly articleRepository: typeof Article,
     ) {}
 
     async findAll(): Promise<Article[]> {

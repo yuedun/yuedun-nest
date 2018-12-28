@@ -21,13 +21,11 @@ export class HttpExceptionFilter implements ExceptionFilter {
             statusCode = exception.getStatus();
             message = exception.message.message;
         }
-        //处理了异常同时记录日志
-        response
-            .status(statusCode)
-            .json({
-                code: statusCode,
-                message,
-                path: request.url,
-            });
+        // 处理了异常同时记录日志
+        response.status(statusCode).json({
+            code: statusCode,
+            message,
+            path: request.url,
+        });
     }
 }

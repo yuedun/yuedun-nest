@@ -6,15 +6,15 @@ import { ArticleModule } from '../article/article.module';
 import { LoggerModule } from '../../libs/mylog.module';
 
 const userProviders = [
-	{
-		provide: 'UserRepository',
-		useValue: User,
-	},
+    {
+        provide: 'UserRepository',
+        useValue: User,
+    },
 ];
 @Module({
     imports: [ArticleModule, LoggerModule, HttpModule], // 每个模块都是一个共享模块。 一旦创建就被每个模块重复使用
     providers: [UserService, ...userProviders],
     controllers: [UserController],
-    exports:[...userProviders]
+    exports: [...userProviders],
 })
 export class UserModule {}

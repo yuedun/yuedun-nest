@@ -5,10 +5,10 @@ import { DatabaseModule } from '../../database/database.module';
 import { default as Log } from './log.entity';
 
 const logProviders = [
-	{
-		provide: 'LogRepository',
-		useValue: Log,
-	},
+    {
+        provide: 'LogRepository',
+        useValue: Log,
+    },
 ];
 @Module({
     imports: [DatabaseModule],
@@ -16,4 +16,4 @@ const logProviders = [
     providers: [LogService, ...logProviders],
     exports: [...logProviders],
 })
-export class LogModule { }
+export class LogModule {}

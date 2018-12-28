@@ -1,9 +1,7 @@
 import { Table, Column, Model, PrimaryKey } from 'sequelize-typescript';
 
-@Table({
-    
-})
-export default class Article extends Model<Article>{
+@Table({})
+export default class Article extends Model<Article> {
     @PrimaryKey
     @Column
     id: number;
