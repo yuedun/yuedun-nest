@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { LogService } from './log.service';
 import { default as Log } from './log.entity';
-import { AuthGuard } from 'middlewares/auth.guard';
+import { AuthGuard } from '../../middlewares/auth.guard';
 
 @Controller('log')
 export class LogController {

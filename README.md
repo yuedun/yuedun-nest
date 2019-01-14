@@ -17,7 +17,7 @@ $ npm run start
 # watch mode
 $ npm run dev
 
-# incremental rebuild (webpack)
+# incremental rebuild (webpack)增量编译
 $ npm run webpack
 $ npm run hmr
 
@@ -54,11 +54,11 @@ $ nest g module cats
 ## debug
 
 ```bash
-# chrome devtool
+# 命令行中启动服务
 $ npm run debug
 
-# vscode（推荐）
-> 按F5即可
+# vscode中启动Attach
+以上两个步骤组合可实现编译和调试同时进行，无需手动重启服务
 
 ```
 
