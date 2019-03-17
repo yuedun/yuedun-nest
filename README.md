@@ -62,6 +62,22 @@ $ npm run debug
 
 ```
 
+```
+"start": "ts-node -r tsconfig-paths/register src/main.ts", //简单的启动服务，不会自动编译重启
+"dev": "nodemon", //可以自动编译重启
+"debug": "nodemon --config nodemon-debug.json", //调试模式，需要配合chrome devtool或者vscode Attach来debug调试
+"hmr": "node dist/server",
+"prestart:prod": "rimraf dist && tsc", //生产环境服务启动前编译ts代码为js代码
+"prod": "node dist/main.js",//启动生产服务
+"lint": "tslint --fix -p tsconfig.json -c tslint.json", //tslint格式化代码
+"format": "prettier --write \"src/**/*.ts\"", //prettier格式化代码
+"test": "jest", //跑测试
+"test:watch": "jest --watch",
+"test:cov": "jest --coverage",
+"test:e2e": "jest --config ./test/jest-e2e.json",
+"webpack": "webpack --config webpack.config.js"
+```
+
 ## License
 
   Nest is [MIT licensed](LICENSE).

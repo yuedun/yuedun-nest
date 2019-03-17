@@ -38,7 +38,7 @@ export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer
             .apply(LoggerMiddleware)
-            .with('中间件参数')
+            // .with('中间件参数')
             .forRoutes('/*');
     }
 }
