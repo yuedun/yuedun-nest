@@ -2,7 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { LogController } from './log.controller';
 import { LogService } from './log.service';
 import { LogModule } from './log.module';
-import { async } from 'rxjs/internal/scheduler/async';
 
 describe('AppController', () => {
     let app: TestingModule;

@@ -17,6 +17,7 @@ export class AuthGuard implements CanActivate {
 
         const request = context.switchToHttp().getRequest();
         const auth: boolean = !!Number(request.query.auth);
+        console.log('>>>auth.guard守卫：' + (auth ? "通过" : "不通过"));
 
         return auth;
     }
