@@ -19,4 +19,9 @@ export class UserService {
             article: articleList,
         };
     }
+    async findArticlesByUser(usreId:number): Promise<Article[]> {
+        const userList = await this.userRepository.findByPk(usreId, {include:[Article]});
+        const articleList = userList.articles;
+        return articleList;
+    }
 }

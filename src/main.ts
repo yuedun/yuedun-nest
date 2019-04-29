@@ -4,7 +4,7 @@ import {
     NestExpressApplication,
 } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
-// import nunjucks = require('nunjucks');
+import nunjucks = require('nunjucks');
 import { MyLogger } from './libs/mylog.service';
 import { HttpExceptionFilter } from './middlewares/http-exception.filter';
 import { TransformInterceptor } from './middlewares/transform.interceptor';
@@ -21,11 +21,11 @@ async function bootstrap() {
     app.useGlobalInterceptors(new TransformInterceptor());
     app.useStaticAssets(__dirname + '/public'); // NestFactory.create需要加泛型参数<NestExpressApplication>
     app.setBaseViewsDir(__dirname + '/views'); // 修改模板文件后立马生效，否则需要重启服务，nunjucks watch参数也有相同作用
-    // nunjucks.configure('views', {
-    //     autoescape: true,
-    //     express: app,
-    //     watch: true,
-    // });
+    nunjucks.configure('views', {
+        autoescape: true,
+        express: app,
+        watch: true,
+    });
     await app.listen(3000, () => {
         const logger = new MyLogger();
         logger.log('server start on localhost:3000');

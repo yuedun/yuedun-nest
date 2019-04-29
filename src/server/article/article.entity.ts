@@ -1,23 +1,37 @@
-import { Table, Column, Model, PrimaryKey } from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, DataType, CreatedAt, UpdatedAt, ForeignKey } from 'sequelize-typescript';
+import User from '../user/user.entity';
 
-@Table({})
+@Table({
+    timestamps: true,
+    underscored: true,
+    // paranoid: true,//set deletedat
+    tableName: 'article',
+    // charset: 'utf8',
+    // collate: 'utf8_unicode_ci'
+})
 export default class Article extends Model<Article> {
     @PrimaryKey
     @Column
-    id: number;
+    id?: number;
 
+    @ForeignKey(() => User)
     @Column
-    user_name: string;
+    user_id?: number;
+    
+    @Column
+    title: string;
 
-    @Column
-    description: string;
+    @Column(DataType.TEXT)
+    content?: string;
 
-    @Column
-    mobile: string;
+    @Column(DataType.TINYINT)
+    status?: number;
 
+    @CreatedAt
     @Column
-    email: string;
+    createdAt?: Date;
 
+    @UpdatedAt
     @Column
-    status: boolean;
+    updatedAt?: Date;
 }

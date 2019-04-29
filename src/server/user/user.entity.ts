@@ -4,9 +4,18 @@ import {
     Model,
     PrimaryKey,
     DataType,
+    HasMany,
 } from 'sequelize-typescript';
+import Article from '../article/article.entity';
 
-@Table({})
+@Table({
+    timestamps: true,
+    underscored: true,
+    // paranoid: true,//set deletedat
+    tableName: 'user',
+    // charset: 'utf8',
+    // collate: 'utf8_unicode_ci'
+})
 export default class User extends Model<User> {
     @PrimaryKey
     @Column
@@ -29,4 +38,7 @@ export default class User extends Model<User> {
 
     @Column
     status: boolean;
+
+    @HasMany(() => Article)
+    articles: Article[]
 }
