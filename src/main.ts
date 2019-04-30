@@ -28,7 +28,8 @@ async function bootstrap() {
     });
     await app.listen(3000, () => {
         const logger = new MyLogger();
-        logger.log('server start on localhost:3000');
+        logger.debug(process.env.NODE_ENV, 'main.ts');
+        logger.log('server start on localhost:3000', 'main.ts');
     });
 }
 bootstrap();
