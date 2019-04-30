@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.njk" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Articles</title>
-</head>
+{% block center %}
+<ul>
+此处应有内容：
+    {% for item in articles %}
+    <li>{{ item.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock center %}
 
-<body>
-    {% extends "parent.njk" %}
-    {% block center %}
-    <ul>
-        {% for item in articles %}
-        <li>{{ item.title }}: {{ item.content }}</li>
-        {% endfor %}
-    </ul>
-    {% endblock center %}
-</body>
 
-</html>

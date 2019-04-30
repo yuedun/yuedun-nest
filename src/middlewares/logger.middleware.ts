@@ -6,7 +6,7 @@ export class LoggerMiddleware implements NestMiddleware {
         console.log('>>>logger.middlerware Before');
         console.time('time count')
         next();
-        console.log('>>>logger.middlerware After\n\r');
+        console.log('>>>logger.middlerware After');
         console.timeEnd('time count')
     }
 }

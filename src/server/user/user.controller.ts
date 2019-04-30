@@ -5,11 +5,13 @@ import {
     HttpStatus,
     Render,
     HttpService,
+    Res,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { default as User } from './user.entity';
 import { default as Article } from '../article/article.entity';
 import { MyLogger } from '../../libs/mylog.service';
+import { Response } from 'express';
 
 @Controller('user')
 export class UserController {
@@ -25,7 +27,7 @@ export class UserController {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
         // this.httpServiece.get('').toPromise();
         try {
-            throw new Error('sdkghfdi');
+            // throw new Error('sdkghfdi');
         } catch (error) {
             this.logger.error(error.message, error.stack);
         }
@@ -33,13 +35,13 @@ export class UserController {
     }
 
     @Get('articles')
-    @Render('articles.njk')
-    async findArticlesByUser(): Promise<any[]> {
+    async findArticlesByUser(@Res() res:Response): Promise<any> {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
         // this.httpServiece.get('').toPromise();
         let articles = await this.userService.findArticlesByUser(2);
-        console.log(">>>articles:", articles.length);
-
-        return [{title:"sdg", content:"",id:12, createdAt:new Date(), updatedAt:new Date(), user_id:23, status:2}]
+        return res.render('articles.njk', {
+            title: "标题",
+            articles
+        })
     }
 }
