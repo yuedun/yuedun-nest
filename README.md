@@ -78,6 +78,10 @@ $ npm run debug
 "webpack": "webpack --config webpack.config.js"
 ```
 
+![组件流程](http://5b0988e595225.cdn.sohucs.com/images/20180904/a81a984ffda84e348cdbdb12b7cc10af.jpeg)
+
+> 客户端请求 ---> 中间件 ---> 守卫 ---> 拦截器之前 ---> 管道 ---> 控制器处理并响应 ---> 拦截器之后 ---> 过滤器
+
 ## License
 
   Nest is [MIT licensed](LICENSE).
