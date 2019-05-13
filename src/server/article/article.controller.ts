@@ -6,11 +6,7 @@ import { MyLogger } from '../../libs/mylog.service';
 
 @Controller('article')
 export class ArticleController {
-    constructor(
-        private readonly articleService: ArticleService,
-        private readonly httpServiece: HttpService,
-        private readonly logger: MyLogger,
-    ) {}
+    constructor(private readonly articleService: ArticleService, private readonly httpServiece: HttpService, private readonly logger: MyLogger) {}
 
     @Get()
     findAll(): Promise<Article[]> | Observable<any> {

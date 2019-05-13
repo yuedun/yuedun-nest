@@ -17,7 +17,7 @@ export default class Article extends Model<Article> {
     @ForeignKey(() => User)
     @Column
     user_id?: number;
-    
+
     @Column
     title: string;
 

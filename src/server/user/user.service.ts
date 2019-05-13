@@ -8,7 +8,7 @@ export class UserService {
     constructor(
         @Inject('UserRepository')
         private readonly userRepository: typeof User,
-        private readonly articleService: ArticleService,
+        private readonly articleService: ArticleService
     ) {}
 
     async findAll(): Promise<{ user: User[]; article?: Article[] }> {
@@ -19,8 +19,8 @@ export class UserService {
             article: articleList,
         };
     }
-    async findArticlesByUser(usreId:number): Promise<Article[]> {
-        const userList = await this.userRepository.findByPk(usreId, {include:[Article]});
+    async findArticlesByUser(usreId: number): Promise<Article[]> {
+        const userList = await this.userRepository.findByPk(usreId, { include: [Article] });
         const articleList = userList.articles;
         return articleList;
     }

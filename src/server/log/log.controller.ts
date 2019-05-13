@@ -1,10 +1,4 @@
-import {
-    Controller,
-    Get,
-    UseFilters,
-    HttpException,
-    UseGuards,
-} from '@nestjs/common';
+import { Controller, Get, UseFilters, HttpException, UseGuards } from '@nestjs/common';
 import { LogService } from './log.service';
 import { default as Log } from './log.entity';
 import { AuthGuard } from '../../middlewares/auth.guard';

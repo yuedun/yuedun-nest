@@ -1,9 +1,4 @@
-import {
-    Module,
-    MiddlewareConsumer,
-    NestModule,
-    HttpModule,
-} from '@nestjs/common';
+import { Module, MiddlewareConsumer, NestModule, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './server/user/user.module';

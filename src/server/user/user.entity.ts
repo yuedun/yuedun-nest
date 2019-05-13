@@ -1,11 +1,4 @@
-import {
-    Table,
-    Column,
-    Model,
-    PrimaryKey,
-    DataType,
-    HasMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, DataType, HasMany } from 'sequelize-typescript';
 import Article from '../article/article.entity';
 
 @Table({
@@ -40,5 +33,5 @@ export default class User extends Model<User> {
     status: boolean;
 
     @HasMany(() => Article)
-    articles: Article[]
+    articles: Article[];
 }

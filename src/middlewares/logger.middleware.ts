@@ -4,10 +4,10 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 export class LoggerMiddleware implements NestMiddleware {
     use(req: Request, res: Response, next: () => void) {
         console.log('>>>logger.middlerware Before');
-        console.time('time count')
+        console.time('time count');
         next();
         console.log('>>>logger.middlerware After');
-        console.timeEnd('time count')
+        console.timeEnd('time count');
     }
 }
 
