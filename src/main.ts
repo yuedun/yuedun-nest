@@ -12,7 +12,7 @@ async function bootstrap() {
     // const server = express();
     const app = await NestFactory.create<NestExpressApplication>(AppModule, new ExpressAdapter());
     app.useLogger(app.get(MyLogger));
-    app.useGlobalGuards(new AuthGuard()); // 守卫放在每个需要验证权限的路由上，并不是所有路由都需要验证权限，比如对外提供的接口
+    // app.useGlobalGuards(new AuthGuard()); // 守卫放在每个需要验证权限的路由上，并不是所有路由都需要验证权限，比如对外提供的接口
     app.useGlobalFilters(new HttpExceptionFilter());
     app.useGlobalInterceptors(new TransformInterceptor());
     app.useStaticAssets(join(__dirname + '/public')); // NestFactory.create需要加泛型参数<NestExpressApplication>
