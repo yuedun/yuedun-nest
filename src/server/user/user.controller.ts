@@ -15,7 +15,7 @@ export class UserController {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
         // this.httpServiece.get('').toPromise();
         try {
-            // throw new Error('sdkghfdi');
+            throw new Error('sdkghfdi');
         } catch (error) {
             this.logger.error(error.message, error.stack);
         }
