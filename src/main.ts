@@ -23,10 +23,10 @@ async function bootstrap() {
         express: app,
         watch: true,
     });
-    await app.listen(3000, () => {
-        const logger = new MyLogger();
+    await app.listen(3004, () => {
+        const logger = new MyLogger('main.ts');
         logger.debug(process.env.NODE_ENV, 'main.ts');
-        logger.log('server start on localhost:3000', 'main.ts');
+        logger.log('server start on localhost:3004');
     });
 }
 bootstrap();
