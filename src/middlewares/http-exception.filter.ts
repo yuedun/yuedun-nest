@@ -2,8 +2,8 @@ import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
 import { HttpException } from '@nestjs/common';
 
 /**
- *为了处理每个发生的异常（无论异常类型如何），可以将括号留空（@Catch()）
- *
+ * 为了处理每个发生的异常（无论异常类型如何），可以将括号留空（@Catch()）
+ * 内置的异常层负责处理整个应用程序中的所有抛出的异常。当捕获到未处理的异常时，最终用户将收到友好的响应。
  * @export
  * @class HttpExceptionFilter
  * @implements {ExceptionFilter}
