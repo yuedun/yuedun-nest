@@ -17,7 +17,7 @@ async function bootstrap() {
     app.useGlobalInterceptors(new TransformInterceptor());// 拦截器
     app.useStaticAssets(join(__dirname + '/public')); // NestFactory.create需要加泛型参数<NestExpressApplication>
     app.setBaseViewsDir(join(__dirname, '..', 'views')); // 修改模板文件后立马生效，否则需要重启服务，nunjucks watch参数也有相同作用
-    app.use(cookieParser());
+    app.use(cookieParser());// 全局中间件，局部中间件可再app.module.ts中配置
     nunjucks.configure('views', {
         ext: 'njk',
         autoescape: true,

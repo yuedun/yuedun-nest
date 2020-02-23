@@ -19,7 +19,9 @@ export class AuthGuard implements CanActivate {
     }
     canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
         this.logger.log('auth.guard验证');
+        
         const request = context.switchToHttp().getRequest<Request>();
+        console.log(request.cookies);
         const token =request.cookies['token']
         this.logger.debug(token);
         const auth: boolean = !!Boolean(token);

@@ -16,14 +16,17 @@ export default class Website extends Model<Website> {
     @Column
     name: string;
 
-    @Column(DataType.TEXT)
+    @Column
     category?: string;
 
     @Column(DataType.TINYINT)
     status?: number;
 
     @Column
-    url? :string
+    url? :string;
+
+    @Column
+    content: string;
 
     @CreatedAt
     @Column

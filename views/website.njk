@@ -1,0 +1,9 @@
+{% extends "layout.njk" %}
+
+{% block center %}
+{% for item in website.content %}
+  <p>{{ item }}</p>
+{% endfor %}
+{% endblock center %}
+
+

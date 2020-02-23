@@ -1,9 +1,8 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, Res } from '@nestjs/common';
 import { WebsiteService } from './website.service';
-import { default as Article } from './website.entity';
-import { Observable } from 'rxjs';
 import { MyLogger } from '../../libs/mylog.service';
-import { AuthGuard } from 'middlewares/auth.guard';
+import { Response } from 'express';
+import { CreateWebsiteDto } from './website.dto';
 
 /**
  * 用户端页面不加守卫
@@ -18,10 +17,15 @@ export class WebsiteController {
         logger.setContext('website.controller.ts');
     }
 
-    @Get()
-    @UseGuards(AuthGuard)
-    findAll(): Promise<Article[]> | Observable<any> {
-        this.logger.debug('>>>>>>>>>>>>>>');
-        return this.websiteService.findAll();
+    @Get(':url')
+    async findOne(@Param('url') url, @Res() res: Response): Promise<void> {
+        this.logger.debug(url);
+        let website = await this.websiteService.findOne(url);
+        let websiteVO: CreateWebsiteDto = new CreateWebsiteDto();
+        websiteVO.content = website.content.split(',');
+        return res.render('website.njk', {
+            title: website.name,
+            website: websiteVO,
+        });
     }
 }

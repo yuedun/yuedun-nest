@@ -32,6 +32,7 @@ import { WebsiteModule } from 'server/website/website.module';
     providers: [AppService,  MyLogger], // 由 Nest 注入器实例化的提供者，并且可以在整个模块中共享
 })
 export class AppModule implements NestModule {
+    // 中间件模块在此处添加，可以给某一部分增加中间件，如果要全局增加则在main.ts中使用app.use添加
     configure(consumer: MiddlewareConsumer) {
         consumer
             .apply(LoggerMiddleware)
