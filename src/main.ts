@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
-import nunjucks = require('nunjucks');
+import * as nunjucks from 'nunjucks';
 import { MyLogger } from './libs/mylog.service';
 import { HttpExceptionFilter } from './middlewares/http-exception.filter';
 import { TransformInterceptor } from './middlewares/transform.interceptor';
@@ -19,7 +19,7 @@ async function bootstrap() {
     app.setBaseViewsDir(join(__dirname, '..', 'views')); // 修改模板文件后立马生效，否则需要重启服务，nunjucks watch参数也有相同作用
     app.use(cookieParser());// 全局中间件，局部中间件可再app.module.ts中配置
     nunjucks.configure('views', {
-        ext: 'njk',
+        // ext: 'njk',
         autoescape: true,
         express: app,
         watch: true,

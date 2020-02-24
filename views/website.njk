@@ -2,7 +2,7 @@
 
 {% block center %}
 {% for item in website.content %}
-  <p>{{ item }}</p>
+  {% include item+".njk" %}
 {% endfor %}
 {% endblock center %}
 

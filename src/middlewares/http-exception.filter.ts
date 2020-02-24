@@ -1,5 +1,6 @@
 import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
 import { HttpException } from '@nestjs/common';
+import { MyLogger } from 'libs/mylog.service';
 
 /**
  * 为了处理每个发生的异常（无论异常类型如何），可以将括号留空（@Catch()）
@@ -11,10 +12,11 @@ import { HttpException } from '@nestjs/common';
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
     catch(exception: HttpException, host: ArgumentsHost) {
+        const logger = new MyLogger('http-exception.ts');
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const request = ctx.getRequest();
-        console.log('>>>http-exception.filter', exception);
+        logger.verbose(exception);
         let statusCode = 500;
         const code = 1;
         let message = exception.message;
