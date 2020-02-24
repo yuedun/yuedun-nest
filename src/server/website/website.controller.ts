@@ -4,7 +4,6 @@ import { MyLogger } from '../../libs/mylog.service';
 import { Response } from 'express';
 import * as nunjucks from 'nunjucks';
 import { CreateWebsiteDto } from './website.dto';
-import { stringify } from 'querystring';
 
 /**
  * 用户端页面不加守卫
@@ -35,7 +34,7 @@ export class WebsiteController {
             contentArray.push(tmplStr);
         }
         // websiteVO.content = contentArray;
-        return res.render('website.njk', {
+        return res.render('edu/website.njk', {
             title: website.name,
             website: websiteVO,
         });
