@@ -1,6 +1,6 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { MyLogger } from 'libs/mylog.service';
+import { MyLogger } from '../libs/mylog.service';
 import { Request } from 'express';
 
 /**

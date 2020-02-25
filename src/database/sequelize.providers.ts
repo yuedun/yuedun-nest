@@ -1,6 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { ConfigModule } from 'config/config.module';
-import { ConfigService } from 'config/config.service';
+import { ConfigService } from '../config/config.service';
 
 /**
  * 在该提供者中需要使用配置提供者，首先需要再database.module.ts中imports对应的ConfigModule，然后在该提供者中使用inject注入，

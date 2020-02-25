@@ -5,7 +5,6 @@
   "author": "yueudn",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "dev": "nodemon",
     "debug": "nodemon --config nodemon-debug.json",
     "hmr": "node dist/server",

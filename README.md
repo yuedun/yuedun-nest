@@ -28,13 +28,13 @@ $ npm run prod
 ## Test
 
 ```bash
-# unit tests
+# unit tests单元测试app.controller.spec.ts
 $ npm run test
 
-# e2e tests
+# e2e tests端对端黑盒测试，模拟用户app.e2e-spec.ts
 $ npm run test:e2e
 
-# test coverage
+# test coverage覆盖率测试
 $ npm run test:cov
 ```
 
