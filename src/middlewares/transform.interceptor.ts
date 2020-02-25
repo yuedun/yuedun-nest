@@ -31,7 +31,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, Response<T>> 
                 code: 0,
                 data,
                 message: '',
-            }))
+            })),
         );
     }
 }

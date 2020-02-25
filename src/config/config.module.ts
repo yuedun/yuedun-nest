@@ -1,5 +1,5 @@
-import { Module } from "@nestjs/common";
-import { ConfigService } from "./config.service";
+import { Module } from '@nestjs/common';
+import { ConfigService } from './config.service';
 import { join } from 'path';
 
 @Module({
@@ -9,6 +9,6 @@ import { join } from 'path';
             useValue: new ConfigService(join(__dirname, `development.env`)),
         },
     ],
-    exports: [ConfigService]
+    exports: [ConfigService],
 })
 export class ConfigModule { }

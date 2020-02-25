@@ -23,7 +23,7 @@ export const databaseProviders = [
                 password,
                 database,
 
-                //读写分离
+                // 读写分离
                 // replication: {
                 //     read: [
                 //         { host, username, password },
@@ -32,7 +32,7 @@ export const databaseProviders = [
                 // },
                 pool: { // If you want to override the options used for the read/write pool you can do so here
                     max: 20,
-                    idle: 30000
+                    idle: 30000,
                 },
                 // modelPaths: [__dirname + '/../**/*.entity.ts'],//这3中方式都可以，需要model export default
             });

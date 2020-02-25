@@ -23,7 +23,7 @@ export default class Website extends Model<Website> {
     status?: number;
 
     @Column
-    url? :string;
+    url?: string;
 
     @Column
     content: string;

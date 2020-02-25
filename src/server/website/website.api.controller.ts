@@ -15,7 +15,7 @@ import { CreateWebsiteDto } from './website.dto';
 export class WebsiteAPIController {
     constructor(
         private readonly websiteService: WebsiteService,
-        private readonly logger: MyLogger
+        private readonly logger: MyLogger,
     ) {
         logger.setContext('website.controller.ts');
     }

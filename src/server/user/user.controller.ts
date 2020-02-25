@@ -1,4 +1,4 @@
-import { Controller, Get, Render, HttpService, Res } from '@nestjs/common';
+import { Controller, Get, Render, HttpService, Res, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { default as User } from './user.entity';
 import { default as Article } from '../article/article.entity';
@@ -10,11 +10,10 @@ export class UserController {
     constructor(
         private readonly userService: UserService,
         private readonly logger: MyLogger,
-        private readonly httpServiece: HttpService
+        private readonly httpServiece: HttpService,
     ) { }
 
     @Get()
-    @Render('index.njk')
     async findAll(@Res() res: Response): Promise<any> {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
         // this.httpServiece.get('').toPromise();
@@ -23,23 +22,21 @@ export class UserController {
         } catch (error) {
             this.logger.error(error.message, error.stack);
         }
-        let users = await this.userService.findAll();
+        const users = await this.userService.findAll();
         return res.render('index.njk', {
-            users
-        })
+            users,
+        });
     }
 
     // 登录
-    @Get()
-    login(): Promise<{ user: User[]; article?: Article[] }> {
-        // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
-        // this.httpServiece.get('').toPromise();
+    @Get('login')
+    login(): Promise<string> {
         try {
             // throw new Error('sdkghfdi');
         } catch (error) {
             this.logger.error(error.message, error.stack);
         }
-        return this.userService.findAll();
+        return Promise.resolve('odfjg98rthnoiehj9gwn9hterbniethj');
     }
 
     @Get('articles')

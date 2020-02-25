@@ -14,7 +14,7 @@ export class WebsiteController {
     private NunjuckEnv: nunjucks.Environment;
     constructor(
         private readonly websiteService: WebsiteService,
-        private readonly logger: MyLogger
+        private readonly logger: MyLogger,
     ) {
         logger.setContext('website.controller.ts');
         this.NunjuckEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader('views'));
@@ -23,14 +23,14 @@ export class WebsiteController {
     @Get(':url')
     async findOne(@Param('url') url, @Res() res: Response): Promise<any> {
         this.logger.debug(url);
-        let website = await this.websiteService.findOne(url);
-        let websiteVO: CreateWebsiteDto = new CreateWebsiteDto();
+        const website = await this.websiteService.findOne(url);
+        const websiteVO: CreateWebsiteDto = new CreateWebsiteDto();
         websiteVO.content = website.content.split(',');
-        //使用服务端模板编译可以对每个子模板填充数据
-        let contentArray = new Array<string>();
+        // 使用服务端模板编译可以对每个子模板填充数据
+        const contentArray = new Array<string>();
         for (const item of websiteVO.content) {
-            var tmpl = this.NunjuckEnv.getTemplate(`${item}.njk`);
-            let tmplStr = tmpl.render({ title: '字幕版' });
+            const tmpl = this.NunjuckEnv.getTemplate(`${item}.njk`);
+            const tmplStr = tmpl.render({ title: '字幕版' });
             contentArray.push(tmplStr);
         }
         // websiteVO.content = contentArray;

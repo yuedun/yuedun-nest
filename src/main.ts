@@ -12,13 +12,13 @@ async function bootstrap() {
     // const server = express();
     const app = await NestFactory.create<NestExpressApplication>(AppModule, new ExpressAdapter());
     app.useLogger(app.get(MyLogger));
-    app.enableCors();//允许跨域调用
+    app.enableCors(); // 允许跨域调用
     // app.useGlobalGuards(new AuthGuard()); // 守卫放在每个需要验证权限的路由上，并不是所有路由都需要验证权限，比如对外提供的接口
-    app.useGlobalFilters(new HttpExceptionFilter());// 过滤器
-    app.useGlobalInterceptors(new TransformInterceptor());// 拦截器
+    app.useGlobalFilters(new HttpExceptionFilter()); // 过滤器
+    app.useGlobalInterceptors(new TransformInterceptor()); // 拦截器
     app.useStaticAssets(join(__dirname, '..', 'public')); // NestFactory.create需要加泛型参数<NestExpressApplication>
     app.setBaseViewsDir(join(__dirname, '..', 'views')); // 修改模板文件后立马生效，否则需要重启服务，nunjucks watch参数也有相同作用
-    app.use(cookieParser());// 全局中间件，局部中间件可再app.module.ts中配置
+    app.use(cookieParser()); // 全局中间件，局部中间件可再app.module.ts中配置
     nunjucks.configure('views', {
         // ext: 'njk',
         autoescape: true,

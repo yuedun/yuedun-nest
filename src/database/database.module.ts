@@ -3,7 +3,7 @@ import { databaseProviders } from './sequelize.providers';
 import { ConfigModule } from 'config/config.module';
 
 @Module({
-    imports:[ConfigModule],
+    imports: [ConfigModule],
     providers: [...databaseProviders],
     exports: [...databaseProviders],
 })

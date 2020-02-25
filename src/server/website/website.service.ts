@@ -6,7 +6,7 @@ import { CreateWebsiteDto } from './website.dto';
 export class WebsiteService {
     constructor(
         @Inject('WebsiteRepository')
-        private readonly websiteRepository: typeof Website
+        private readonly websiteRepository: typeof Website,
     ) { }
 
     // 获取单条数据
@@ -28,7 +28,7 @@ export class WebsiteService {
             category: ws.category,
             content: ws.content.toString(),
             url: ws.url,
-            status: 0
+            status: 0,
         });
         return website;
     }
