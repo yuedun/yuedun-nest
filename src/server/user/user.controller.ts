@@ -7,11 +7,31 @@ import { Response } from 'express';
 
 @Controller('user')
 export class UserController {
-    constructor(private readonly userService: UserService, private readonly logger: MyLogger, private readonly httpServiece: HttpService) {}
+    constructor(
+        private readonly userService: UserService,
+        private readonly logger: MyLogger,
+        private readonly httpServiece: HttpService
+    ) { }
 
     @Get()
     @Render('index.njk')
-    findAll(): Promise<{ user: User[]; article?: Article[] }> {
+    async findAll(@Res() res: Response): Promise<any> {
+        // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
+        // this.httpServiece.get('').toPromise();
+        try {
+            // throw new Error('sdkghfdi');
+        } catch (error) {
+            this.logger.error(error.message, error.stack);
+        }
+        let users = await this.userService.findAll();
+        return res.render('index.njk', {
+            users
+        })
+    }
+
+    // 登录
+    @Get()
+    login(): Promise<{ user: User[]; article?: Article[] }> {
         // throw new HttpException('Forbbidden', HttpStatus.BAD_REQUEST)
         // this.httpServiece.get('').toPromise();
         try {

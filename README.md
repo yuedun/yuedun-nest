@@ -1,6 +1,6 @@
-## Description
+## 项目描述
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+本项目主要用于展示一个组件化网站，在本项目中开发相应组件，通过后台来控制要展示的页面。
 
 ## Installation
 

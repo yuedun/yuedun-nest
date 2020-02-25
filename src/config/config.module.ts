@@ -1,7 +1,6 @@
 import { Module } from "@nestjs/common";
 import { ConfigService } from "./config.service";
-import {join} from 'path';
-import { from } from "rxjs";
+import { join } from 'path';
 
 @Module({
     providers: [

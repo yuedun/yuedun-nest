@@ -1,4 +1,4 @@
-import { Controller, Get, UseGuards, Post, Req, Body } from '@nestjs/common';
+import { Controller, Get, UseGuards, Post, Req, Body, Query, Options, All, RequestMapping } from '@nestjs/common';
 import { WebsiteService } from './website.service';
 import { Observable } from 'rxjs';
 import { MyLogger } from '../../libs/mylog.service';
@@ -22,14 +22,14 @@ export class WebsiteAPIController {
 
     // 列表
     @Get()
-    @UseGuards(AuthGuard)
-    findAll(): Promise<Website[]> | Observable<Website[]> {
-        this.logger.debug('>>>>>>>>>>>>>>');
-        return this.websiteService.findAll();
+    // @UseGuards(AuthGuard)
+    findAll(@Query() query): Promise<Website[]> | Observable<Website[]> {
+        this.logger.debug(query);
+        return this.websiteService.findAll(Number(query.offset), Number(query.limit));
     }
 
     // 新增
-    @Post()
+    @Post('/create')
     @UseGuards(AuthGuard)
     create(@Body() createWebSiteDto: CreateWebsiteDto): Promise<Website> | Observable<Website> {
         this.logger.debug(createWebSiteDto);

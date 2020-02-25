@@ -16,8 +16,8 @@ export class WebsiteService {
     }
 
     // 获取列表
-    async findAll(): Promise<Website[]> {
-        const list = await this.websiteRepository.findAll();
+    async findAll(offset: number, limit: number): Promise<Website[]> {
+        const list = await this.websiteRepository.findAll({ limit, offset });
         return list;
     }
 
