@@ -12,7 +12,7 @@ import { MyLogger } from 'libs/mylog.service';
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
     catch(exception: HttpException, host: ArgumentsHost) {
-        const logger = new MyLogger('http-exception.ts');
+        const logger = new MyLogger('http-exception.filter.ts');
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const request = ctx.getRequest();

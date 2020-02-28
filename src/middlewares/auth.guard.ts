@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
         const request = context.switchToHttp().getRequest<Request>();
         this.logger.debug(request.cookies);
         const token = request.cookies.token;
-        this.logger.debug(token);
         const auth: boolean = !!Boolean(token);
         this.logger.log('auth.guard守卫验证结果：' + (auth ? '通过' : '不通过'));
         return auth;

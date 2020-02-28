@@ -1,7 +1,9 @@
 // website创建对象
-export class CreateWebsiteDto {
+export class WebsiteDto {
+    id?: number;
     name?: string;
     category?: string;
     url?: string;
+    status?: number;
     content?: Array<string>;
 }

@@ -3,7 +3,7 @@ import { WebsiteService } from './website.service';
 import { MyLogger } from '../../libs/mylog.service';
 import { Response, Request } from 'express';
 import * as nunjucks from 'nunjucks';
-import { CreateWebsiteDto } from './website.dto';
+import { WebsiteDto } from './website.dto';
 
 /**
  * 用户端页面不加守卫
@@ -24,7 +24,7 @@ export class WebsiteController {
     async findOne(@Param('url') url, @Res() res: Response): Promise<any> {
         this.logger.debug(url);
         const website = await this.websiteService.findOne(url);
-        const websiteVO: CreateWebsiteDto = new CreateWebsiteDto();
+        const websiteVO: WebsiteDto = new WebsiteDto();
         websiteVO.content = website.content.split(',');
         // 使用服务端模板编译可以对每个子模板填充数据
         const contentArray = new Array<string>();

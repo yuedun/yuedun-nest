@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { default as Website } from './website.entity';
-import { CreateWebsiteDto } from './website.dto';
+import { WebsiteDto } from './website.dto';
 
 @Injectable()
 export class WebsiteService {
@@ -22,13 +22,28 @@ export class WebsiteService {
     }
 
     // 新增
-    async create(ws: CreateWebsiteDto): Promise<Website> {
+    async create(ws: WebsiteDto): Promise<Website> {
         const website = await this.websiteRepository.create({
             name: ws.name,
             category: ws.category,
             content: ws.content.toString(),
             url: ws.url,
             status: 0,
+        });
+        return website;
+    }
+    // 修改
+    async update(ws: WebsiteDto): Promise<[number, Website[]]> {
+        const website = await this.websiteRepository.update({
+            name: ws.name,
+            category: ws.category,
+            content: ws.content.toString(),
+            url: ws.url,
+            status: ws.status,
+        },{
+            where:{
+                id: ws.id
+            }
         });
         return website;
     }
