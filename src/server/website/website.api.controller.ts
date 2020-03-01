@@ -22,7 +22,7 @@ export class WebsiteAPIController {
 
     // 列表
     @Get()
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     findAll(@Query() query): Promise<Website[]> | Observable<Website[]> {
         this.logger.debug(query);
         return this.websiteService.findAll(Number(query.offset), Number(query.limit));
@@ -37,7 +37,7 @@ export class WebsiteAPIController {
     }
     // 修改
     @Post('/update')
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     update(@Body() createWebSiteDto: WebsiteDto): Promise<[number, Website[]]> | Observable<Website> {
         this.logger.debug(createWebSiteDto);
         return this.websiteService.update(createWebSiteDto);
