@@ -1,17 +1,18 @@
-import { Controller, Get, UseGuards, Post, Req, Body, Query, Options, All, RequestMapping } from '@nestjs/common';
+import { Controller, Get, UseGuards, Post, Req, Body, Query, UseFilters,  } from '@nestjs/common';
 import { WebsiteService } from './website.service';
 import { Observable } from 'rxjs';
 import { MyLogger } from '../../libs/mylog.service';
-import { AuthGuard } from 'middlewares/auth.guard';
+import { AuthGuard } from '../../middlewares/auth.guard';
 import Website from './website.entity';
-import { Request } from 'express';
 import { WebsiteDto } from './website.dto';
+import { APIExceptionFilter } from 'middlewares/api-exception.filter';
 
 /**
  * 用户端页面不加守卫
  * 后端接口加守卫@UseGuards(AuthGuard)
  */
 @Controller('api/website')
+@UseFilters(new APIExceptionFilter())
 export class WebsiteAPIController {
     constructor(
         private readonly websiteService: WebsiteService,

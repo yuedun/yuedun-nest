@@ -11,7 +11,7 @@ export class WebsiteService {
 
     // 获取单条数据
     async findOne(url: string): Promise<Website> {
-        const website = await this.websiteRepository.findOne({ where: { url } });
+        const website = await this.websiteRepository.findOne({ where: { url, status: 1 } });
         return website;
     }
 
@@ -40,8 +40,8 @@ export class WebsiteService {
             content: ws.content.toString(),
             url: ws.url,
             status: ws.status,
-        },{
-            where:{
+        }, {
+            where: {
                 id: ws.id
             }
         });

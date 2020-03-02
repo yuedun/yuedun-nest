@@ -232,24 +232,24 @@ webpackJsonp([2], {
                                                 default)("#sectionBottom").addClass("active"), (0, a.
                                                     default)("#sectionBottom").removeClass("hideB"), (0, a.
                                                         default)("#goBackBtn").show()) :
-                                    ((0, a.
-                                        default)("#sectionBottom").removeClass("active"), (0, a.
-                                            default)("#sectionBottom").addClass("hideB"), (0, a.
-                                                default)("#goBackBtn").hide()),
-                                    (0, a.
-                                        default)(window).scrollTop() >= .5 * (0, a.
-                                            default)(window).height() ? (0, a.
-                                                default)("#goBackBtn").show() :
+                                        ((0, a.
+                                            default)("#sectionBottom").removeClass("active"), (0, a.
+                                                default)("#sectionBottom").addClass("hideB"), (0, a.
+                                                    default)("#goBackBtn").hide()),
                                         (0, a.
-                                            default)("#goBackBtn").hide(),
-                                    (0, a.
-                                        default)(window).scrollTop() + (0, a.
-                                            default)(window).height() >= (0, a.
-                                                default)(document).height() - (0, a.
-                                                    default)(".footer").height() && ((0, a.
-                                                        default)("#sectionBottom").removeClass("active"), (0, a.
-                                                            default)("#sectionBottom").addClass("hideB"), (0, a.
-                                                                default)("#goBackBtn").show())
+                                            default)(window).scrollTop() >= .5 * (0, a.
+                                                default)(window).height() ? (0, a.
+                                                    default)("#goBackBtn").show() :
+                                            (0, a.
+                                                default)("#goBackBtn").hide(),
+                                        (0, a.
+                                            default)(window).scrollTop() + (0, a.
+                                                default)(window).height() >= (0, a.
+                                                    default)(document).height() - (0, a.
+                                                        default)(".footer").height() && ((0, a.
+                                                            default)("#sectionBottom").removeClass("active"), (0, a.
+                                                                default)("#sectionBottom").addClass("hideB"), (0, a.
+                                                                    default)("#goBackBtn").show())
                                 })
                         },
                         compile: function (e) {
@@ -289,12 +289,12 @@ webpackJsonp([2], {
                                         (0, a.
                                             default)("#erweima").toggle()
                                     }),
-                            (0, a.
-                                default)("#telTouchBtn").on("touchend",
-                                    function () {
-                                        (0, a.
-                                            default)("#teltips").toggle()
-                                    })
+                                (0, a.
+                                    default)("#telTouchBtn").on("touchend",
+                                        function () {
+                                            (0, a.
+                                                default)("#teltips").toggle()
+                                        })
                         },
                         eventClickCloseBottom: function () {
                             (0, a.
@@ -407,11 +407,11 @@ webpackJsonp([2], {
                                     function () {
                                         (0, o.
                                             default)("body").css("overflow", "auto"),
-                                        l.removeClass("show").fadeOut(200),
-                                        (0, o.
-                                            default)(this).parent().addClass("hide").hide(),
-                                        (0, o.
-                                            default)(this).remove()
+                                            l.removeClass("show").fadeOut(200),
+                                            (0, o.
+                                                default)(this).parent().addClass("hide").hide(),
+                                            (0, o.
+                                                default)(this).remove()
                                     })) :
                                     (c ? (v += '<object codebase="//download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"  id="videoObject" width="' + i + '" height="' + n + '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">', v += '<param name="quality" value="high" />', v += '<param name="allowFullScreen" value="true" />', v += '<param name="wmode" value="transparent" />', v += '<param name="wmode" value="opaque" />', v += '<param name="movie" value="//resource.vipkid.com.cn/parent_portal/images/flvplayer.swf" />', v += '<param name="FlashVars"  value="vcastr_file=' + c + '&amp;IsAutoPlay=1&amp;IsShowBar=0" />', v += '<embed src="//resource.vipkid.com.cn/parent_portal/images/flvplayer.swf" flashvars="vcastr_file=' + c + '&amp;IsAutoPlay=1&amp;IsShowBar=0" width="' + i + '" height="' + n + '" pluginspage=" http://www.macromedia.com/go/getflashplayer" quality="high" allowfullscreen="true" type="application/x-shockwave-flash"  wmode="transparent" /></object>') : (v = (0, o.
                                         default)('<div>暂不支持当前格式的视频播放，请用最新版的<a href="/download" style="color:#fff;margin: 5px">Chrome浏览器</a>打开本站</div>'), v.css(f)), l.append(v)),
@@ -421,12 +421,12 @@ webpackJsonp([2], {
                                 d.click(function () {
                                     (0, o.
                                         default)("body").css("overflow", "auto"),
-                                    (0, o.
-                                        default)(this).siblings().remove(),
-                                    (0, o.
-                                        default)(this).parent().addClass("hide").hide(),
-                                    (0, o.
-                                        default)(window).unbind("resize", t)
+                                        (0, o.
+                                            default)(this).siblings().remove(),
+                                        (0, o.
+                                            default)(this).parent().addClass("hide").hide(),
+                                        (0, o.
+                                            default)(window).unbind("resize", t)
                                 })
                     })
         }
@@ -463,14 +463,14 @@ webpackJsonp([2], {
                             function () {
                                 (0, l.
                                     default)(),
-                                this.rewardCarousel(),
-                                this.eventClickShowVideo(),
-                                this.eventClickTeachers(),
-                                this.eventClickLiutao(),
-                                this.eventVkTrackClickHome(),
-                                this.redirectMobile(),
-                                this.googleJudge(),
-                                this.videoAutoPlay()
+                                    this.rewardCarousel(),
+                                    this.eventClickShowVideo(),
+                                    this.eventClickTeachers(),
+                                    this.eventClickLiutao(),
+                                    this.eventVkTrackClickHome(),
+                                    this.redirectMobile(),
+                                    this.googleJudge(),
+                                    this.videoAutoPlay()
                             },
                         googleJudge: function () {
                             o.
@@ -554,13 +554,13 @@ webpackJsonp([2], {
                                 });
                             var v = void 0;
                             "autoPlay" == n.attr("rel") && (v = setInterval(function () {
-                            + new Date - s < 3e3 || t(1)
+                                + new Date - s < 3e3 || t(1)
                             },
                                 3e3), a.mouseover(function () {
                                     clearInterval(v)
                                 }), a.mouseout(function () {
                                     v = setInterval(function () {
-                                    + new Date - s < 3e3 || t(1)
+                                        + new Date - s < 3e3 || t(1)
                                     },
                                         3e3)
                                 })),
@@ -588,7 +588,7 @@ webpackJsonp([2], {
                                             g = k - p,
                                             m = !0,
                                             v = setInterval(function () {
-                                            + new Date - s < 3e3 || t(1)
+                                                + new Date - s < 3e3 || t(1)
                                             },
                                                 3e3)
                                     }),
@@ -602,8 +602,8 @@ webpackJsonp([2], {
                                 default)(".play-btn").click(function () {
                                     (0, o.
                                         default)("#play-video").show(),
-                                    (0, o.
-                                        default)("#play-video video").trigger("play")
+                                        (0, o.
+                                            default)("#play-video video").trigger("play")
                                 })
                         },
                         eventClickTeachers: function () {
@@ -611,8 +611,8 @@ webpackJsonp([2], {
                                 default)(".teachers-btn").click(function () {
                                     (0, o.
                                         default)("#teachers-video").show(),
-                                    (0, o.
-                                        default)("#teachers-video video").trigger("play")
+                                        (0, o.
+                                            default)("#teachers-video video").trigger("play")
                                 })
                         },
                         eventClickLiutao: function () {
@@ -620,8 +620,8 @@ webpackJsonp([2], {
                                 default)(".liutao-btn").click(function () {
                                     (0, o.
                                         default)("#liutao-video").show(),
-                                    (0, o.
-                                        default)("#liutao-video video").trigger("play")
+                                        (0, o.
+                                            default)("#liutao-video video").trigger("play")
                                 })
                         },
                         eventVkTrackClickHome: function () {
@@ -629,62 +629,62 @@ webpackJsonp([2], {
                                 default)("#homeOneVideo").click(function () {
                                     vkTrack.click("parent_pc_consult_fix_video_f")
                                 }),
-                            (0, o.
-                                default)("#homeTwoVideo").click(function () {
-                                    vkTrack.click("parent_pc_consult_fix_video_s")
-                                }),
-                            (0, o.
-                                default)("#freeClickSignup").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_button_free")
-                                }),
-                            (0, o.
-                                default)("#learnOne").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_yanxuan")
-                                }),
-                            (0, o.
-                                default)("#learnTwo").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_guojijiaocai")
-                                }),
-                            (0, o.
-                                default)("#learnThree").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_rengongzhineng")
-                                }),
-                            (0, o.
-                                default)("#learnFour").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_yiduiyi")
-                                }),
-                            (0, o.
-                                default)("#learnFive").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_guojihuatuandui")
-                                }),
-                            (0, o.
-                                default)("#learnSix").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_jinrushijiaoxue")
-                                }),
-                            (0, o.
-                                default)("#teacherDahuiBtn").click(function () {
-                                    vkTrack.click("parent_pc_consult_fix_video_t")
-                                }),
-                            (0, o.
-                                default)("#homeToTeachersBtn").click(function () {
-                                    vkTrack.click("parent_pc_consult_click_button_un")
-                                }),
-                            (0, o.
-                                default)("#lookDetailBtn").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_button_friend_view")
-                                }),
-                            (0, o.
-                                default)("#freePromiseBtn").click(function () {
-                                    vkTrack.click("parent_pc_consult_fix_click_ad")
-                                }),
-                            (0, o.
-                                default)("#onLineZxBtn").click(function () {
-                                    vkTrack.click("parent_pc_consult_fix_click_button_ad")
-                                }),
-                            (0, o.
-                                default)("#freeVipkidLookDeatilBtn").click(function () {
-                                    vkTrack.click("parent_pc_signup_click_button_free_view")
-                                })
+                                (0, o.
+                                    default)("#homeTwoVideo").click(function () {
+                                        vkTrack.click("parent_pc_consult_fix_video_s")
+                                    }),
+                                (0, o.
+                                    default)("#freeClickSignup").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_button_free")
+                                    }),
+                                (0, o.
+                                    default)("#learnOne").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_yanxuan")
+                                    }),
+                                (0, o.
+                                    default)("#learnTwo").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_guojijiaocai")
+                                    }),
+                                (0, o.
+                                    default)("#learnThree").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_rengongzhineng")
+                                    }),
+                                (0, o.
+                                    default)("#learnFour").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_yiduiyi")
+                                    }),
+                                (0, o.
+                                    default)("#learnFive").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_guojihuatuandui")
+                                    }),
+                                (0, o.
+                                    default)("#learnSix").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_jinrushijiaoxue")
+                                    }),
+                                (0, o.
+                                    default)("#teacherDahuiBtn").click(function () {
+                                        vkTrack.click("parent_pc_consult_fix_video_t")
+                                    }),
+                                (0, o.
+                                    default)("#homeToTeachersBtn").click(function () {
+                                        vkTrack.click("parent_pc_consult_click_button_un")
+                                    }),
+                                (0, o.
+                                    default)("#lookDetailBtn").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_button_friend_view")
+                                    }),
+                                (0, o.
+                                    default)("#freePromiseBtn").click(function () {
+                                        vkTrack.click("parent_pc_consult_fix_click_ad")
+                                    }),
+                                (0, o.
+                                    default)("#onLineZxBtn").click(function () {
+                                        vkTrack.click("parent_pc_consult_fix_click_button_ad")
+                                    }),
+                                (0, o.
+                                    default)("#freeVipkidLookDeatilBtn").click(function () {
+                                        vkTrack.click("parent_pc_signup_click_button_free_view")
+                                    })
                         }
                     }).init()
                 })
@@ -760,7 +760,7 @@ webpackJsonp([2], {
                                     _ = !0
                             }
                             function t() {
-                                s++ ,
+                                s++,
                                     s > r - 1 && (s = 0),
                                     f.regsiterChange(s),
                                     i(s)
@@ -850,7 +850,7 @@ webpackJsonp([2], {
                                     }),
                                 b.addEventListener("touchend",
                                     function () {
-                                        T && Math.abs(y) > C / 5 && (y > 0 ? s-- : s++ , T = !1),
+                                        T && Math.abs(y) > C / 5 && (y > 0 ? s-- : s++, T = !1),
                                             s > r - 1 ? s = 0 : s < 0 && (s = r - 1),
                                             f.regsiterChange(s),
                                             i(s)

@@ -8,8 +8,8 @@ import { DatabaseModule } from './database/database.module';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { LoggerModule } from './libs/mylog.module';
 import { MyLogger } from './libs/mylog.service';
-import { ConfigModule } from 'config/config.module';
-import { WebsiteModule } from 'server/website/website.module';
+import { ConfigModule } from './config/config.module';
+import { WebsiteModule } from './server/website/website.module';
 
 /**
  * 根模块，必须。可以导入其他模块。具有Module装饰器的类称之为模块。
