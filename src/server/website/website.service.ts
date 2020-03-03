@@ -47,4 +47,9 @@ export class WebsiteService {
         });
         return website;
     }
+    // 修改
+    async delete(id: number): Promise<number> {
+        const affect = await this.websiteRepository.destroy({where: {id}});
+        return affect;
+    }
 }

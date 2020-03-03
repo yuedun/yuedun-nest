@@ -13,7 +13,7 @@ import { Response } from 'express';
 @Catch()
 export class RouteExceptionFilter implements ExceptionFilter {
     catch(exception: HttpException, host: ArgumentsHost) {
-        const logger = new MyLogger('http-exception.filter.ts');
+        const logger = new MyLogger('route-exception.filter.ts');
         const ctx = host.switchToHttp();
         const response = ctx.getResponse<Response>();
         logger.verbose(JSON.stringify(exception));

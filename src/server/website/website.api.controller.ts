@@ -1,4 +1,4 @@
-import { Controller, Get, UseGuards, Post, Req, Body, Query, UseFilters,  } from '@nestjs/common';
+import { Controller, Get, UseGuards, Post, Req, Body, Query, UseFilters, Param,  } from '@nestjs/common';
 import { WebsiteService } from './website.service';
 import { Observable } from 'rxjs';
 import { MyLogger } from '../../libs/mylog.service';
@@ -42,5 +42,12 @@ export class WebsiteAPIController {
     update(@Body() createWebSiteDto: WebsiteDto): Promise<[number, Website[]]> | Observable<Website> {
         this.logger.debug(createWebSiteDto);
         return this.websiteService.update(createWebSiteDto);
+    }
+    // 删除
+    @Post('/delete/:id')
+    @UseGuards(AuthGuard)
+    delete(@Param('id') id: number): Promise<number> | Observable<number> {
+        this.logger.debug(id);
+        return this.websiteService.delete(id);
     }
 }
