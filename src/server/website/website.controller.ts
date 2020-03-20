@@ -4,7 +4,7 @@ import { MyLogger } from '../../libs/mylog.service';
 import { Response } from 'express';
 import * as nunjucks from 'nunjucks';
 import { WebsiteDto } from './website.dto';
-import { RouteExceptionFilter } from 'middlewares/route-exception.filter';
+import { RouteExceptionFilter } from '../../middlewares/route-exception.filter';
 
 /**
  * 用户端页面不加守卫
