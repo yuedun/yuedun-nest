@@ -5,7 +5,7 @@ import { default as Article } from '../article/article.entity';
 import { MyLogger } from '../../libs/mylog.service';
 import { Response } from 'express';
 
-@Controller('user')
+@Controller('users')
 export class UserController {
     constructor(
         private readonly userService: UserService,
@@ -29,7 +29,7 @@ export class UserController {
     }
 
     // 登录
-    @Get('login')
+    @Post('login')
     login(): Promise<string> {
         try {
             // throw new Error('sdkghfdi');
