@@ -5,7 +5,7 @@ import { MyLogger } from '../../libs/mylog.service';
 import { AuthGuard } from '../../middlewares/auth.guard';
 import Website from './website.entity';
 import { WebsiteDto } from './website.dto';
-import { APIExceptionFilter } from 'middlewares/api-exception.filter';
+import { APIExceptionFilter } from '../../middlewares/api-exception.filter';
 
 /**
  * 用户端页面不加守卫
