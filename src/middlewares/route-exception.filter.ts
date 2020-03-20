@@ -21,7 +21,7 @@ export class RouteExceptionFilter implements ExceptionFilter {
         let message = exception.message;
         if (exception instanceof HttpException) {
             statusCode = exception.getStatus();
-            message = message || exception.message.message;
+            message = message || (exception.message as any).e.message;
         }
         // 处理了异常同时记录日志
         response.status(statusCode).render('notfound.njk', {

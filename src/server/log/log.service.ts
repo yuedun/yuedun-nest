@@ -9,7 +9,7 @@ export class LogService {
         @Inject('Sequelize') private readonly sequelize: Sequelize
     ) { }
     async getLogs(p: number): Promise<Log[]> {
-        if (p == 1) {
+        if (p === 1) {
             throw new Error('这是log.service抛出的异常');
         }
         return await this.logRepository.findAll();

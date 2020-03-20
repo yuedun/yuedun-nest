@@ -11,7 +11,7 @@ import { RouteExceptionFilter } from 'middlewares/route-exception.filter';
  * 后端接口加守卫@UseGuards(AuthGuard)
  */
 @Controller('website')
-@UseFilters(new RouteExceptionFilter())
+@UseFilters(RouteExceptionFilter)
 export class WebsiteController {
     private NunjuckEnv: nunjucks.Environment;
     constructor(

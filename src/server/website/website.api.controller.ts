@@ -12,7 +12,7 @@ import { APIExceptionFilter } from 'middlewares/api-exception.filter';
  * 后端接口加守卫@UseGuards(AuthGuard)
  */
 @Controller('api/website')
-@UseFilters(new APIExceptionFilter())
+@UseFilters(APIExceptionFilter)
 export class WebsiteAPIController {
     constructor(
         private readonly websiteService: WebsiteService,
