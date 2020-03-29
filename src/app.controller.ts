@@ -1,6 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MyLogger } from './libs/mylog.service';
+import { Response } from 'express';
 
 @Controller()
 export class AppController {
@@ -17,5 +18,13 @@ export class AppController {
     root(): string {
         this.myLogger.log('>>>>>>>>>>app.controller.ts');
         return this.appService.root();
+    }
+    @Get('/index')
+    index(@Res() res:Response): void {
+        this.myLogger.log('>>>>>>>>>>app.controller.ts');
+        return res.render('edu/layout3.njk', {
+            title: "website.name",
+            website: "websiteVO",
+        });
     }
 }

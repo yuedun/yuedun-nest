@@ -17,7 +17,7 @@ $ npm run start
 # watch mode
 $ npm run dev
 
-# incremental rebuild (webpack)增量编译
+# incremental rebuild (webpack)增量编译，可以加快编译速度，需要两个命令组合执行
 $ npm run webpack
 $ npm run hmr
 
