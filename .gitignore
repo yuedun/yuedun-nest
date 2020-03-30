@@ -62,4 +62,4 @@ typings/
 
 dist/
 package-lock.json
-src/config/*.env
+config/*.env
