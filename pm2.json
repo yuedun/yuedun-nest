@@ -1,0 +1,16 @@
+{
+    "apps" : [{
+      "name": "yuedun-nest",
+      "cwd": "dist",
+      "script"    : "main.js",
+      "instances" : "1",
+      "exec_mode" : "fork",
+      "env_production" : {
+         "NODE_ENV": "production",
+         "PORT": 3004,
+         "ENABLE_NODE_LOG":"YES"
+      },
+      "log_date_format": "YYYY-MM-DD_HH:mm Z",
+      "merge_logs": true
+    }]
+  }
