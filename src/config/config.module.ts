@@ -6,7 +6,7 @@ import { join } from 'path';
     providers: [
         {
             provide: ConfigService,
-            useValue: new ConfigService(join(__dirname, '../../config/', `${process.env.NODE_ENV}.env`)),
+            useValue: new ConfigService(join(__dirname, '../../config/', `${process.env.NODE_ENV||'development'}.env`)),
         },
     ],
     exports: [ConfigService],
