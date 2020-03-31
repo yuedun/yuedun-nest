@@ -16,7 +16,7 @@ export class RouteExceptionFilter implements ExceptionFilter {
         const logger = new MyLogger('route-exception.filter.ts');
         const ctx = host.switchToHttp();
         const response = ctx.getResponse<Response>();
-        logger.verbose(JSON.stringify(exception));
+        logger.error(JSON.stringify(exception), exception.stack);
         let statusCode = 500;
         let message = exception.message;
         if (exception instanceof HttpException) {

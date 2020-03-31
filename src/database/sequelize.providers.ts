@@ -14,9 +14,9 @@ export const databaseProviders = [
             const username = config.get('DATABASE_USER');
             const password = config.get('DATABASE_PASSWORD');
             const database = config.get('DATABASE_DATABASE');
-            let sub = 'ts';
-            if (process.env.NODE_ENV == 'production') {
-                sub = 'js';
+            let suffix = 'js';
+            if (process.env.NODE_ENV == 'development') {
+                suffix = 'ts';
             }
             const sequelize = new Sequelize({
                 dialect: 'mysql',
@@ -40,7 +40,7 @@ export const databaseProviders = [
                 // modelPaths: [__dirname + '/../**/*.entity.ts'],//这3中方式都可以，需要model export default
             });
             // sequelize.addModels([Log, User, Article]);//这3中方式都可以
-            sequelize.addModels([__dirname + '/../**/*.entity.' + sub]); // 这3中方式都可以，需要model export default
+            sequelize.addModels([__dirname + '/../**/*.entity.' + suffix]); // 这3中方式都可以，需要model export default
             // await sequelize.sync();
             return sequelize;
         },
