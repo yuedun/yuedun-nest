@@ -32,12 +32,12 @@ export class WebsiteController {
         const websiteVO: WebsiteDto = new WebsiteDto();
         websiteVO.content = website.content.split(',');
         // 使用服务端模板编译可以对每个子模板填充数据
-        const contentArray = new Array<string>();
-        for (const item of websiteVO.content) {
-            const tmpl = this.NunjuckEnv.getTemplate(`${item}.njk`);
-            const tmplStr = tmpl.render({ title: '字幕版' });
-            contentArray.push(tmplStr);
-        }
+        // const contentArray = new Array<string>();
+        // for (const item of websiteVO.content) {
+        //     const tmpl = this.NunjuckEnv.getTemplate(`${item}.njk`);
+        //     const tmplStr = tmpl.render({ title: '字幕版' });
+        //     contentArray.push(tmplStr);
+        // }
         // websiteVO.content = contentArray;
         return res.render('edu/website.njk', {
             title: website.name,
