@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { WebsiteService } from './website.service';
 import { WebsiteController } from './website.controller';
 import { default as Website } from './website.entity';
@@ -13,7 +13,7 @@ const websiteProviders = [
 ];
 
 @Module({
-    imports: [LoggerModule],
+    imports: [LoggerModule, HttpModule],
     providers: [WebsiteService, ...websiteProviders],
     controllers: [WebsiteController, WebsiteAPIController],
     exports: [WebsiteService, ...websiteProviders], // 导出以后才能被其他模块导入

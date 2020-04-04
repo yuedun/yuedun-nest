@@ -24,24 +24,24 @@ export class WebsiteController {
 
     @Get(':url')
     async findOne(@Param('url') url, @Res() res: Response): Promise<any> {
-        this.logger.debug(url);
-        const website = await this.websiteService.findOne(url);
+        this.logger.debug("url:", url);
+        const website = await this.websiteService.findOneData(url);
+        this.logger.debug("website:"+JSON.stringify(website))
         if (!website) {
             throw new NotFoundException('找不到该页面！');
         }
-        const websiteVO: WebsiteDto = new WebsiteDto();
-        websiteVO.content = website.content.split(',');
+        // const websiteVO: WebsiteDto = new WebsiteDto();
         // 使用服务端模板编译可以对每个子模板填充数据
-        // const contentArray = new Array<string>();
-        // for (const item of websiteVO.content) {
+        // const componentsArray = new Array<string>();
+        // for (const item of websiteVO.components) {
         //     const tmpl = this.NunjuckEnv.getTemplate(`${item}.njk`);
         //     const tmplStr = tmpl.render({ title: '字幕版' });
-        //     contentArray.push(tmplStr);
+        //     componentsArray.push(tmplStr);
         // }
-        // websiteVO.content = contentArray;
-        return res.render('edu/website.njk', {
+        // websiteVO.components = componentsArray;
+        return res.render('edu/index.njk', {
             title: website.name,
-            website: websiteVO,
+            website,
         });
     }
 }

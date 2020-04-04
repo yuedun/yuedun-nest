@@ -26,7 +26,7 @@ export default class Website extends Model<Website> {
     url?: string;
 
     @Column
-    content: string;
+    components: string;
 
     @CreatedAt
     @Column

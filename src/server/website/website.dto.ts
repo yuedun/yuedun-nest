@@ -5,5 +5,5 @@ export class WebsiteDto {
     category?: string;
     url?: string;
     status?: number;
-    content?: Array<string>;
+    components?: Array<any>;
 }
