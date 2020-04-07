@@ -4,12 +4,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no,initial-scale=1">
         <meta name="renderer" content="webkit">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        <meta name="description" content="{{description}}">
+        <meta name="keywords" content="{{keywords}}">
         <link rel="alternate" media="only screen and (max-width: 640px)" href="#">
         <meta name="mobile-agent" content="format=html5;url= #">
         <title>{{title|default('某某网站')}}</title>
-        <link href="https://s.vipkidstatic.com/fe-static/activity/img/favicon-3e3ad5afaa.ico" type="image/x-icon" rel="shortcut icon">
+        <link href="{{icon}}" type="image/x-icon" rel="shortcut icon">
         <link href="/VIPKID_files/base.css" rel="stylesheet">
         <link href="/VIPKID_files/home.css" rel="stylesheet">
         <link href="/VIPKID_files/teachers.css" rel="stylesheet">
@@ -21,8 +21,8 @@
     </head>
 
     <body>
-    {% block mybody%}
+        {% block mybody%}
         <div>这是body内容</div>
-    {%endblock%}
-    </body>
-</html>
+        {%endblock%}
+        </body>
+    </html>

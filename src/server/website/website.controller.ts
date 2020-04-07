@@ -41,6 +41,9 @@ export class WebsiteController {
         // websiteVO.components = componentsArray;
         return res.render('edu/index.njk', {
             title: website.name,
+            icon: website.icon,
+            keywords: website.keywords,
+            description: website.description,
             website,
         });
     }
