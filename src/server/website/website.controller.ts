@@ -24,9 +24,9 @@ export class WebsiteController {
 
     @Get(':url')
     async findOne(@Param('url') url, @Res() res: Response): Promise<any> {
-        this.logger.debug("url:", url);
+        this.logger.debug("url:" + url);
         const website = await this.websiteService.findOneData(url);
-        this.logger.debug("website:"+JSON.stringify(website))
+        this.logger.debug("website:" + JSON.stringify(website))
         if (!website) {
             throw new NotFoundException('找不到该页面！');
         }

@@ -24,7 +24,7 @@ export class WebsiteService {
     }
     // 获取单条数据
     findOneData(url: string): Promise<WebsiteDto> {
-        return this.httpService.get('http://localhost:8900/api/website/get-website').pipe(map(res => res.data.data)).toPromise<WebsiteDto>()
+        return this.httpService.get(`http://localhost:8900/api/website/get-website?name=${url}`).pipe(map(res => res.data.data)).toPromise<WebsiteDto>()
     }
 
     // 获取列表
