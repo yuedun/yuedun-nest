@@ -2,7 +2,7 @@
 
 {% block mybody %}
 {% for item in website.components %}
-  {% include item.name + ".njk" %}
+  {% include website.category + "/" + item.name + ".njk" %}
 {% endfor %}
 {% endblock mybody %}
 

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-npm run prestart:prod
+npm run build
 pm2 restart nest
 pm2 logs nest
