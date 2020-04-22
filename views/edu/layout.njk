@@ -18,11 +18,23 @@
         <link href="/YUEDUN_files/vae.css" rel="stylesheet">
         <link href="/YUEDUN_files/download.css" rel="stylesheet">
         <link href="/YUEDUN_files/classlist.css" rel="stylesheet">
+        {% block stylesheet %}
+        <style>
+            {# 这是样式，将会被替换 #}
+        </style>
+        {% endblock stylesheet %}
     </head>
-
+    {# 这个模板是父模板，其他模板继承后替换block #}
     <body>
         {% block mybody%}
-        <div>这是body内容</div>
+        <div>这是body内容，将会被字幕版替换</div>
         {%endblock%}
+        <script src="/YUEDUN_files/base.js"></script>
+        <script src="/YUEDUN_files/home.js"></script>
+        {% block script %}
+        <script>
+            console.log("这是原始模板，将会被字幕版替换")
+        </script>
+        {% endblock script %}
         </body>
     </html>
