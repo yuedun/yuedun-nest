@@ -16,21 +16,22 @@ export class AppController {
         logger.setContext('app.controller.ts');
     }
 
-    @Get()
-    index(@Res() res:Response): void {
+    @Get('/')
+    index(@Res() res: Response): void {
         this.logger.log('>>>>>>>>>>app.controller.ts');
         return res.render('edu/layout3.njk', {
             title: "website.name",
             website: "websiteVO",
         });
     }
-    
-    @Get(':url')
-    async findOne(@Param('url') url, @Res() res: Response): Promise<any> {
+
+    @Get('/:name/:url')
+    async findOne(@Param('name') name, @Param('url') url, @Res() res: Response): Promise<any> {
+        this.logger.debug("name:" + name);
         this.logger.debug("url:" + url);
-        const website = await this.websiteService.findOneData(url);
-        this.logger.debug("website:" + JSON.stringify(website))
-        if (!website) {
+        const resData = await this.websiteService.findOneData(name, url);
+        this.logger.debug(">>>:" + JSON.stringify(resData))
+        if (!resData) {
             throw new NotFoundException('找不到该页面！');
         }
         // const websiteVO: WebsiteDto = new WebsiteDto();
@@ -42,12 +43,13 @@ export class AppController {
         //     componentsArray.push(tmplStr);
         // }
         // websiteVO.components = componentsArray;
-        return res.render('edu/index.njk', {
-            title: website.name,
-            icon: website.icon,
-            keywords: website.keywords,
-            description: website.description,
-            website,
+        return res.render(resData.website.category + '/index.njk', {
+            title: resData.page.name,
+            icon: resData.website.icon,
+            keywords: resData.page.keywords,
+            description: resData.page.description,
+            category: resData.website.category,
+            page: resData.page,
         });
     }
 }

@@ -1,6 +1,6 @@
 import { Injectable, Inject, HttpService } from '@nestjs/common';
 import { default as Website } from './website.entity';
-import { WebsiteDto } from './website.dto';
+import { WebsiteDto, PageDto } from './website.dto';
 import { map } from 'rxjs/operators';
 import { MyLogger } from '../../libs/mylog.service';
 
@@ -21,8 +21,9 @@ export class WebsiteService {
         return website;
     }
     // 获取单条数据
-    findOneData(url: string): Promise<WebsiteDto> {
-        return this.httpService.get(`http://localhost:8900/api/website/get-website?name=${url}`).pipe(map(res => res.data.data)).toPromise<WebsiteDto>()
+    findOneData(name: string, url: string): Promise<{ website: WebsiteDto; page: PageDto }> {
+        return this.httpService.get(`http://localhost:8900/api/website/get-website?name=${name}&url=${url}`)
+            .pipe(map(res => res.data)).toPromise<{ website: WebsiteDto; page: PageDto }>()
     }
 
     // 获取列表

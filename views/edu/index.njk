@@ -1,8 +1,8 @@
 {% extends "edu/layout.njk" %}
 
 {% block mybody %}
-{% for item in website.components %}
-  {% include website.category + "/" + item.name + ".njk" %}
+{% for item in page.components %}
+  {% include category + "/" + item.name + ".njk" %}
 {% endfor %}
 {% endblock mybody %}
 {% block script %}
