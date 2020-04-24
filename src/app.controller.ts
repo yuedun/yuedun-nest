@@ -1,9 +1,13 @@
-import { Controller, Get, Res, Param, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Res, Param, NotFoundException, Req } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MyLogger } from './libs/mylog.service';
-import { Response } from 'express';
+import { Response, Request } from 'express';
 import { WebsiteService } from './server/website/website.service';
 
+// 设置域名与数据库网站名的映射关系，可以直接通过域名获取到网站名，进而获取对应网站的内容
+const WebsiteMap = {
+    'nest.hopefly.top': 'yuedun',
+}
 @Controller()
 export class AppController {
     constructor(
@@ -25,11 +29,15 @@ export class AppController {
         });
     }
 
-    @Get('/:name/:url')
-    async findOne(@Param('name') name, @Param('url') url, @Res() res: Response): Promise<any> {
-        this.logger.debug("name:" + name);
+    @Get('/:url')
+    async findOne(@Req() request: Request, @Res() res: Response): Promise<any> {
+        let host = request.hostname;
+        let website = WebsiteMap[host];
+        let url = request.params.url;
+        this.logger.debug("website:" + website);
         this.logger.debug("url:" + url);
-        const resData = await this.websiteService.findOneData(name, url);
+        this.logger.debug(request.hostname)
+        const resData = await this.websiteService.findOneData(website, url);
         this.logger.debug(">>>:" + JSON.stringify(resData))
         if (!resData) {
             throw new NotFoundException('找不到该页面！');

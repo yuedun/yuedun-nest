@@ -3,7 +3,6 @@ import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express
 import { AppModule } from './app.module';
 import * as nunjucks from 'nunjucks';
 import { MyLogger } from './libs/mylog.service';
-import { RouteExceptionFilter } from './middlewares/route-exception.filter';
 import { TransformInterceptor } from './middlewares/transform.interceptor';
 import { join } from 'path';
 import * as cookieParser from 'cookie-parser';
