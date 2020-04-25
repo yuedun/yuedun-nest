@@ -3,18 +3,16 @@
     <div class="home-banner-container">
         <div id="focus-banner">
             <ul class="banner-list" id="focus-banner-list">
+            {% for item2 in item.elements %}
                 <li class="bannerbox4 hidebanner" style="z-index: 2;">
-                    <img class="banner-img" src="/YUEDUN_files/banner-4_b3ddc79e.png">
+                    <img class="banner-img" src="{{item2.img}}">
                 </li>
-                <li class="bannerbox8 hidebanner showbannerAnimation" style="z-index: 1;">
-                    <img class="banner-img" src="/YUEDUN_files/banner8_0e37261f.png">
-                </li>
+            {% endfor %}
             </ul>
             <ul class="focus-bubble" id="focus-bubble">
-                <li class="">
-                    <span></span></li>
-                <li class="current">
-                    <span></span></li>
+            {% for item2 in item.elements %}
+                <li class="current"><span></span></li>
+            {% endfor %}
             </ul>
         </div>
     </div>
