@@ -1,89 +1,37 @@
 
-.openclass .openclass-banner {
-	position: relative;
-	height: 520px;
-	overflow: hidden;
-	background: #538bb5
-}
-
-.openclass .openclass-banner .img {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	margin-left: -720px;
-	height: 520px
-}
-
-.openclass .openclass-banner .openclass-title {
-	position: relative;
-	z-index: 2;
-	padding-top: 60px;
-	padding-left: 90px
-}
-
-.openclass .openclass-banner .openclass-title h1 {
-	position: relative;
-	font-size: 40px;
-	font-weight: 400;
-	color: #fff;
-	line-height: 50px;
-	-webkit-animation: bannerTextShow .25s ease-in 0s 1 forwards;
-	-moz-animation: bannerTextShow .25s ease-in 0s 1 forwards;
-	-o-animation: bannerTextShow .25s ease-in 0s 1 forwards;
-	-ms-animation: bannerTextShow .25s ease-in 0s 1 forwards;
-	animation: bannerTextShow .25s ease-in 0s 1 forwards
-}
-
-.openclass .openclass-banner .openclass-title h3 {
-	position: relative;
-	padding-top: 12px;
-	font-size: 22px;
-	font-weight: 400;
-	color: #fff;
-	line-height: 30px;
-	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	-webkit-animation: bannerTextShow .25s ease-in .25s 1 forwards;
-	-moz-animation: bannerTextShow .25s ease-in .25s 1 forwards;
-	-o-animation: bannerTextShow .25s ease-in .25s 1 forwards;
-	-ms-animation: bannerTextShow .25s ease-in .25s 1 forwards;
-	animation: bannerTextShow .25s ease-in .25s 1 forwards
-}
-
-.openclass .search-all {
+.search-all {
 	padding: 0 30px
 }
 
-.openclass .search-all .search-criteria {
+.search-all .search-criteria {
 	margin-top: 40px
 }
 
-.openclass .search-all .search-criteria ul {
+.search-all .search-criteria ul {
 	border: 1px solid #e2e2e2
 }
 
-.openclass .search-all .search-criteria ul.class-time {
+.search-all .search-criteria ul.class-time {
 	border-radius: 4px 4px 0 0
 }
 
-.openclass .search-all .search-criteria ul.class-level {
+.search-all .search-criteria ul.class-level {
 	border-top: 0;
 	border-radius: 0 0 4px 4px
 }
 
-.openclass .search-all .search-criteria ul .gray {
+.search-all .search-criteria ul .gray {
 	background: #f8f8f8;
 	border-right: 1px solid #e7eaec
 }
 
-.openclass .search-all .search-criteria ul li {
+.search-all .search-criteria ul li {
 	float: left;
 	height: 50px;
 	line-height: 50px
 }
 
-.openclass .search-all .search-criteria ul li i {
+.search-all .search-criteria ul li i {
 	display: inline-block;
 	width: 75px;
 	padding-left: 38px;
@@ -93,7 +41,7 @@
 	font-style: normal
 }
 
-.openclass .search-all .search-criteria ul li span {
+.search-all .search-criteria ul li span {
 	display: inline-block;
 	width: 54px;
 	padding: 0 16px;
@@ -102,15 +50,15 @@
 	cursor: pointer
 }
 
-.openclass .search-all .search-criteria ul li:hover span,.openclass .search-all .search-criteria ul li span.choose-type {
+.search-all .search-criteria ul li:hover span,.search-all .search-criteria ul li span.choose-type {
 	color: #f60
 }
 
-.openclass .search-all .search-list {
+.search-all .search-list {
 	padding-bottom: 20px
 }
 
-.openclass .search-all .search-list ul.search-content li {
+.search-all .search-list ul.search-content li {
 	position: relative;
 	padding: 35px 30px;
 	margin-top: 35px;
@@ -125,7 +73,7 @@
 	transition: all .2s ease
 }
 
-.openclass .search-all .search-list ul.search-content li:hover {
+.search-all .search-list ul.search-content li:hover {
 	-webkit-transform: translate3d(0,-4px,0);
 	-moz-transform: translate3d(0,-4px,0);
 	-o-transform: translate3d(0,-4px,0);
@@ -135,31 +83,31 @@
 	box-shadow: 0 10px 15px 0 rgba(0,0,0,.1),0 0 40px 0 rgba(0,0,0,.1)
 }
 
-.openclass .search-all .search-list ul.search-content li .content-img {
+.search-all .search-list ul.search-content li .content-img {
 	position: absolute;
 	width: 350px;
 	text-align: center
 }
 
-.openclass .search-all .search-list ul.search-content li .content-img img {
+.search-all .search-list ul.search-content li .content-img img {
 	width: 100%
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt {
+.search-all .search-list ul.search-content li .content-txt {
 	position: relative;
 	width: 100%;
 	min-height: 250px;
 	padding-left: 380px
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt h2 {
+.search-all .search-list ul.search-content li .content-txt h2 {
 	padding-bottom: 15px;
 	color: #333;
 	font-size: 26px;
 	font-weight: 400
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .class-age span {
+.search-all .search-list ul.search-content li .content-txt .class-age span {
 	position: relative;
 	line-height: 22px;
 	padding-right: 65px;
@@ -169,12 +117,12 @@
 }
 
 @media (max-width:1124px) {
-	.openclass .search-all .search-list ul.search-content li .content-txt .class-age span {
+	.search-all .search-list ul.search-content li .content-txt .class-age span {
 		padding-right: 24px
 	}
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .class-age span.opencds i {
+.search-all .search-list ul.search-content li .content-txt .class-age span.opencds i {
 	display: inline-block;
 	width: 24px;
 	height: 24px;
@@ -184,7 +132,7 @@
 	vertical-align: bottom
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .class-age span.people-num s {
+.search-all .search-list ul.search-content li .content-txt .class-age span.people-num s {
 	display: inline-block;
 	width: 24px;
 	height: 24px;
@@ -194,7 +142,7 @@
 	vertical-align: bottom
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .class-age span.age i {
+.search-all .search-list ul.search-content li .content-txt .class-age span.age i {
 	display: inline-block;
 	width: 24px;
 	height: 24px;
@@ -204,12 +152,12 @@
 	vertical-align: bottom
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .class-age span i {
+.search-all .search-list ul.search-content li .content-txt .class-age span i {
 	color: #ff6422;
 	font-style: normal
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt p.desc {
+.search-all .search-list ul.search-content li .content-txt p.desc {
 	line-height: 22px;
 	padding: 10px 0;
 	color: #999;
@@ -219,12 +167,12 @@
 }
 
 @media (max-width:1124px) {
-	.openclass .search-all .search-list ul.search-content li .content-txt p.desc {
+	.search-all .search-list ul.search-content li .content-txt p.desc {
 		font-size: 12px
 	}
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .time-submit {
+.search-all .search-list ul.search-content li .content-txt .time-submit {
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -232,13 +180,13 @@
 	padding-left: 380px
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .time-submit p.time {
+.search-all .search-list ul.search-content li .content-txt .time-submit p.time {
 	line-height: 44px;
 	color: #333;
 	font-size: 18px
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .time-submit p.time i {
+.search-all .search-list ul.search-content li .content-txt .time-submit p.time i {
 	display: inline-block;
 	width: 22px;
 	height: 22px;
@@ -248,7 +196,7 @@
 	vertical-align: sub
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .time-submit a {
+.search-all .search-list ul.search-content li .content-txt .time-submit a {
 	width: 144px;
 	height: 44px;
 	line-height: 44px;
@@ -260,25 +208,25 @@
 	text-align: center
 }
 
-.openclass .search-all .search-list ul.search-content li .content-txt .time-submit a:hover {
+.search-all .search-list ul.search-content li .content-txt .time-submit a:hover {
 	background: #e64507;
 	-webkit-box-shadow: 0 0 10px 0 rgba(255,103,26,.3),0 5px 10px 0 rgba(255,103,26,.6);
 	box-shadow: 0 0 10px 0 rgba(255,103,26,.3),0 5px 10px 0 rgba(255,103,26,.6);
 	color: #fff
 }
 
-.openclass .search-all .search-list ul.search-content li img.type-img {
+.search-all .search-list ul.search-content li img.type-img {
 	position: absolute;
 	width: 76px;
 	top: 4px;
 	left: -7px
 }
 
-.openclass #js-page {
+#js-page {
 	padding-bottom: 70px
 }
 
-.openclass #js-page .page {
+#js-page .page {
 	display: inline-block;
 	vertical-align: middle;
 	width: 100%;
@@ -292,14 +240,14 @@
 	user-select: none
 }
 
-.openclass #js-page .page ul.page-list {
+#js-page .page ul.page-list {
 	display: inline-block;
 	vertical-align: middle;
 	color: #333;
 	margin-top: 5px
 }
 
-.openclass #js-page .page ul.page-list li {
+#js-page .page ul.page-list li {
 	display: inline-block;
 	padding: 0 20px;
 	border: 1px solid #e2e2e2;
@@ -310,14 +258,14 @@
 	cursor: pointer
 }
 
-.openclass #js-page .page ul.page-list li.active,.openclass #js-page .page ul.page-list li:hover {
+#js-page .page ul.page-list li.active,#js-page .page ul.page-list li:hover {
 	background: #f85415;
 	color: #fff;
 	border: 1px solid #f85415;
 	cursor: auto
 }
 
-.openclass #js-page .page span {
+#js-page .page span {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0 15px;
@@ -328,25 +276,25 @@
 	background: #fff
 }
 
-.openclass #js-page .page span.cursor-pointer {
+#js-page .page span.cursor-pointer {
 	cursor: pointer
 }
 
-.openclass #js-page .page span.first-page {
+#js-page .page span.first-page {
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px
 }
 
-.openclass #js-page .page span.last-page {
+#js-page .page span.last-page {
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px
 }
 
-.openclass #js-page .page span.disclick {
+#js-page .page span.disclick {
 	color: #ccc
 }
 
-.openclass #js-page .page span.skip-page {
+#js-page .page span.skip-page {
 	display: inline-block;
 	position: absolute;
 	right: 2px;
@@ -357,12 +305,12 @@
 	border: none
 }
 
-.openclass #js-page .page span.skip-page em.current-page {
+#js-page .page span.skip-page em.current-page {
 	color: #f85415;
 	margin: 0 5px
 }
 
-.openclass #js-page .page span.skip-page .skip-page-val {
+#js-page .page span.skip-page .skip-page-val {
 	width: 40px;
 	margin: 0 5px;
 	text-align: center;
@@ -375,88 +323,11 @@
 	background-color: #fff
 }
 
-.openclass #js-page .page span.skip-page .goto-page {
+#js-page .page span.skip-page .goto-page {
 	display: inline-block;
 	margin-left: 5px;
 	border-radius: 4px;
 	padding: 0 20px;
 	cursor: pointer;
 	color: #333
-}
-
-#loginOrRegister {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,.8);
-	z-index: 500;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	transform: translateZ(0)
-}
-
-#loginOrRegister .register-login-box {
-	position: absolute;
-	width: 400px;
-	height: 200px;
-	line-height: 1.6;
-	top: 50%;
-	left: 50%;
-	padding: 50px 30px 40px;
-	margin-top: -100px;
-	margin-left: -200px;
-	background-color: #fff;
-	text-align: center;
-	border-radius: 4px
-}
-
-#loginOrRegister .register-login-box img.close-modal {
-	position: absolute;
-	top: 14px;
-	right: 14px;
-	width: 23px;
-	cursor: pointer
-}
-
-#loginOrRegister .register-login-box .btn-login-cancle {
-	padding: 36px 0 0;
-	text-align: center
-}
-
-#loginOrRegister .register-login-box .btn-login-cancle a {
-	display: inline-block;
-	min-width: 130px;
-	height: 44px;
-	line-height: 42px;
-	color: #fff;
-	border-radius: 24px;
-	text-align: center;
-	background: #f85415;
-	border: 1px solid #f85415
-}
-
-#loginOrRegister .register-login-box .btn-login-cancle a:hover {
-	background: #e64507;
-	-webkit-box-shadow: 0 0 10px 0 rgba(255,103,26,.3),0 5px 10px 0 rgba(255,103,26,.6);
-	box-shadow: 0 0 10px 0 rgba(255,103,26,.3),0 5px 10px 0 rgba(255,103,26,.6)
-}
-
-#loginOrRegister .register-login-box .btn-login-cancle a.btn-cancle {
-	background-color: #fff;
-	color: #f85415;
-	border: 1px solid #f85415;
-	margin-left: 20px;
-	border-radius: 24px
-}
-
-#loginOrRegister .register-login-box .btn-login-cancle a.btn-cancle:hover {
-	background: #e64507;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #fff
 }
