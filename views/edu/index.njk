@@ -1,12 +1,12 @@
 {% extends "edu/layout.njk" %}
 
 {% block mybody %}
-{% for item in page.components %}
-  {% include category + "/" + item.name + ".njk" %}
-{% endfor %}
+  {% for component in page.components %}
+    {% include category + "/" + component.name + ".njk" %}
+  {% endfor %}
 {% endblock mybody %}
 {% block script %}
-<script>
-  console.log("yuedun")
-</script>
+  <script>
+    console.log("yuedun")
+  </script>
 {% endblock script %}

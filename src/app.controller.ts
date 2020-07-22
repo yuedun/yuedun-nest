@@ -32,13 +32,13 @@ export class AppController {
     @Get('/:url')
     async findOne(@Req() request: Request, @Res() res: Response): Promise<any> {
         let host = request.hostname;
-        let website = WebsiteMap[host];
+        let website = WebsiteMap[host];// 由域名获取服务
         let url = request.params.url;
         this.logger.debug("website:" + website);
         this.logger.debug("url:" + url);
         this.logger.debug(request.hostname)
         const resData = await this.websiteService.findOneData(website, url);
-        this.logger.debug(">>>:" + JSON.stringify(resData))
+        // this.logger.debug(">>>:" + JSON.stringify(resData))
         if (!resData) {
             throw new NotFoundException('找不到该页面！');
         }

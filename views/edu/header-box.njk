@@ -4,21 +4,21 @@
     <div class="header-info-pc header-box-fixed" id="headerInfoPc">
         <div class="header-info clearfix width-visual margin-auto">
             <div class="vipkid fl">
-                <a href="/"><img src="{{item.big_img}}" alt="{{item.title_1}}"></a>
+                <a href="/"><img src="{{component.big_img}}" alt="{{component.title_1}}"></a>
             </div>
             <ul class="banner clearfix fl">
-                {% for item2 in item.elements%}
+                {% for element in component.elements%}
                 <li class="toggle xzzx">
-                    <a href="{{item2.link}}">
-                        <span>{{item2.title_1}}</span>
+                    <a href="{{element.link}}">
+                        <span>{{element.title_1}}</span>
                         <i></i>
                     </a>
                 </li>
                 {% endfor %}
             </ul>
             {# <div class="login-apply fr">
-                <div class="submit" id="loginHeaderBtn">{{item.links[0].title}}</div>
-                <div class="apply" id="registerHeaderBtn">{{item.links[1].title}}</div>
+                <div class="submit" id="loginHeaderBtn">{{component.links[0].title}}</div>
+                <div class="apply" id="registerHeaderBtn">{{component.links[1].title}}</div>
             </div> #}
         </div>
     </div>

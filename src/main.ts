@@ -8,7 +8,6 @@ import { join } from 'path';
 import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
-    // const server = express();
     const app = await NestFactory.create<NestExpressApplication>(AppModule, new ExpressAdapter());
     app.useLogger(app.get(MyLogger));
     app.enableCors(); // 允许跨域调用

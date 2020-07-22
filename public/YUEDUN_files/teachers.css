@@ -113,11 +113,10 @@
 
 .banner-con img {
 	position: absolute;
-	top: 0;
-	left: 50%;
-	margin-left: -720px;
+    top: 0;
+    left: 50%;
+    margin-left: -720px;
 	height: 520px;
-	width: 100%;
 }
 
 .banner-con .content {
