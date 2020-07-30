@@ -863,5 +863,5 @@
 //     [73]);
 
 $(function () {
-    $("#focus-banner").slide({ mainCell: "#focus-banner-list", autoPage:"<li><a></a></li>", autoPlay: true });
+    $("#focus-banner").slide({ mainCell: "#focus-banner-list", titCell:".focus-bubble li", autoPage:"<li><a></a></li>", autoPlay: true });
 })

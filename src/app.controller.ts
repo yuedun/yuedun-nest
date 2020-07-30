@@ -21,7 +21,30 @@ export class AppController {
     }
 
     @Get('/')
-    index(@Res() res: Response): void {
+    async index(@Req() request: Request, @Res() res: Response): Promise<any> {
+        this.logger.log('>>>>>>>>>>app.controller.ts');
+        let host = request.hostname;
+        let website = WebsiteMap[host];// 由域名获取服务
+        let url = request.params.url || 'index';
+        this.logger.debug("website:" + website);
+        this.logger.debug("url:" + url);
+        this.logger.debug(request.hostname)
+        const resData = await this.websiteService.findOneData(website, url);
+        // this.logger.debug(">>>:" + JSON.stringify(resData))
+        if (!resData) {
+            throw new NotFoundException('找不到该页面！');
+        }
+        return res.render(resData.website.category + '/index.njk', {
+            title: resData.page.name,
+            icon: resData.website.icon,
+            keywords: resData.page.keywords,
+            description: resData.page.description,
+            category: resData.website.category,
+            page: resData.page,
+        });
+    }
+    @Get('/template')
+    template(@Res() res: Response): void {
         this.logger.log('>>>>>>>>>>app.controller.ts');
         return res.render('edu/layout3.njk', {
             title: "website.name",
