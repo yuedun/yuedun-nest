@@ -23,6 +23,7 @@ $ npm run hmr
 
 # production mode
 $ npm run prod
+$ ./release.sh
 ```
 
 ## Test
