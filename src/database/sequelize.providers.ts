@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { ConfigService } from '../config/config.service';
+// import { ConfigService } from '../config/config.service';
 
 /**
  * 在该提供者中需要使用配置提供者，首先需要再database.module.ts中imports对应的ConfigModule，然后在该提供者中使用inject注入，
@@ -7,13 +7,17 @@ import { ConfigService } from '../config/config.service';
  */
 export const databaseProviders = [
     {
-        inject: [ConfigService],
+        // inject: [ConfigService],
         provide: 'Sequelize',
-        useFactory: async (config: ConfigService) => {
-            const host = config.get('DATABASE_HOST');
-            const username = config.get('DATABASE_USER');
-            const password = config.get('DATABASE_PASSWORD');
-            const database = config.get('DATABASE_DATABASE');
+        useFactory: async () => {
+            const host = process.env.DATABASE_HOST;
+            const username = process.env.DATABASE_USER;
+            const password = process.env.DATABASE_PASSWORD;
+            const database = process.env.DATABASE_DATABASE;
+            // const host = config.get('DATABASE_HOST');
+            // const username = config.get('DATABASE_USER');
+            // const password = config.get('DATABASE_PASSWORD');
+            // const database = config.get('DATABASE_DATABASE');
             let suffix = 'js';
             if (process.env.NODE_ENV == 'development') {
                 suffix = 'ts';

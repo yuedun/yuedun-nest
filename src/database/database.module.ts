@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { databaseProviders } from './sequelize.providers';
-import { ConfigModule } from '../config/config.module';
+// import { ConfigModule } from '../config/config.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
     imports: [ConfigModule],

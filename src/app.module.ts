@@ -8,7 +8,8 @@ import { DatabaseModule } from './database/database.module';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { LoggerModule } from './libs/mylog.module';
 import { MyLogger } from './libs/mylog.service';
-import { ConfigModule } from './config/config.module';
+import { ConfigModule } from '@nestjs/config';
+// import { ConfigModule } from './config/config.module';
 import { WebsiteModule } from './server/website/website.module';
 
 /**
@@ -24,7 +25,7 @@ import { WebsiteModule } from './server/website/website.module';
         ArticleModule,
         LogModule,
         LoggerModule,
-        ConfigModule,
+        ConfigModule.forRoot(),
         WebsiteModule,
         // HttpModule,
     ], // 导入模块所需的导入模块列表

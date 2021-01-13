@@ -8,6 +8,8 @@
 $ npm install
 ```
 
+根目录下创建`.env`配置文件
+
 ## Running the app
 
 ```bash
@@ -76,7 +78,7 @@ $ npm run debug
 "test:watch": "jest --watch",
 "test:cov": "jest --coverage",
 "test:e2e": "jest --config ./test/jest-e2e.json",
-"webpack": "webpack --config webpack.config.js"
+"webpack": "webpack --config webpack.config.js"// 和hmr命令结合，但是目前跑不起来
 ```
 
 ![组件流程](http://5b0988e595225.cdn.sohucs.com/images/20180904/a81a984ffda84e348cdbdb12b7cc10af.jpeg)
