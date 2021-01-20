@@ -1,5 +1,5 @@
 #!/bin/bash
 
-npm run build
-pm2 restart nest
+npm run build || exit 1
+pm2 startOrReload nest
 pm2 logs nest
