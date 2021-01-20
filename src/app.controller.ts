@@ -6,6 +6,7 @@ import { WebsiteService } from './server/website/website.service';
 
 // 设置域名与数据库网站名的映射关系，可以直接通过域名获取到网站名，进而获取对应网站的内容
 const WebsiteMap = {
+    'localhost': 'yuedun',
     'nest.hopefly.top': 'yuedun',
 }
 @Controller()
@@ -30,12 +31,12 @@ export class AppController {
         this.logger.debug("url:" + url);
         this.logger.debug(request.hostname)
         const resData = await this.websiteService.findOneData(website, url);
-        // this.logger.debug(">>>:" + JSON.stringify(resData))
+        this.logger.debug(">>>:" + JSON.stringify(resData))
         if (!resData) {
             throw new NotFoundException('找不到该页面！');
         }
         return res.render(resData.website.category + '/index.njk', {
-            title: resData.page.name,
+            title: resData.page.title,
             icon: resData.website.icon,
             keywords: resData.page.keywords,
             description: resData.page.description,
@@ -43,6 +44,7 @@ export class AppController {
             page: resData.page,
         });
     }
+    // 查看整体页面的测试路由
     @Get('/template')
     template(@Res() res: Response): void {
         this.logger.log('>>>>>>>>>>app.controller.ts');
@@ -75,7 +77,7 @@ export class AppController {
         // }
         // websiteVO.components = componentsArray;
         return res.render(resData.website.category + '/index.njk', {
-            title: resData.page.name,
+            title: resData.page.title,
             icon: resData.website.icon,
             keywords: resData.page.keywords,
             description: resData.page.description,

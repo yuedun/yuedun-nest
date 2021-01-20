@@ -1,7 +1,7 @@
 // website创建对象
 export class PageDto {
     id?: number;
-    name?: string;
+    title?: string;
     description?: string;
     keywords?: string;
     icon?: string;
@@ -12,7 +12,7 @@ export class PageDto {
 }
 export class WebsiteDto {
     id?: number;
-    name?: string;
+    title?: string;
     description?: string;
     keywords?: string;
     icon?: string;

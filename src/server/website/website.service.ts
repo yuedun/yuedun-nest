@@ -35,7 +35,7 @@ export class WebsiteService {
     // 新增
     async create(ws: WebsiteDto): Promise<Website> {
         const website = await this.websiteRepository.create({
-            name: ws.name,
+            name: ws.title,
             category: ws.category,
             components: ws.components.toString(),
             url: ws.url,
@@ -46,7 +46,7 @@ export class WebsiteService {
     // 修改
     async update(ws: WebsiteDto): Promise<[number, Website[]]> {
         const website = await this.websiteRepository.update({
-            name: ws.name,
+            name: ws.title,
             category: ws.category,
             components: ws.components.toString(),
             url: ws.url,
