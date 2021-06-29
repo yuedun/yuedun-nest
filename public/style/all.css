@@ -1958,7 +1958,7 @@ body.active {
 }
 
 
-.class-advantage .advantage-banner {
+.advantage-banner {
 	position: relative;
 	height: 520px;
 	min-width: 1024px;
@@ -1966,21 +1966,21 @@ body.active {
 	background-color: #f7f7f7
 }
 
-.class-advantage .advantage-banner .banner {
+.advantage-banner .banner {
 	position: absolute;
 	left: 50%;
 	margin-left: -720px;
 	height: 100%
 }
 
-.class-advantage .advantage-banner .banner-content {
+.advantage-banner .banner-content {
 	position: relative;
 	z-index: 2;
 	padding-left: 30px;
 	padding-top: 130px
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-title {
+.advantage-banner .banner-content .advantage-title {
 	position: relative;
 	-webkit-animation: bannerTextShow .25s ease-in 0s 1 forwards;
 	-moz-animation: bannerTextShow .25s ease-in 0s 1 forwards;
@@ -1989,17 +1989,17 @@ body.active {
 	animation: bannerTextShow .25s ease-in 0s 1 forwards
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-title span {
+.advantage-banner .banner-content .advantage-title span {
 	padding-right: 12px
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-title span.vipkid {
+.advantage-banner .banner-content .advantage-title span.vipkid {
 	font-size: 72px;
 	font-weight: 500;
 	color: #ff6226
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-title span.jsln {
+.advantage-banner .banner-content .advantage-title span.jsln {
 	position: relative;
 	top: -6px;
 	font-size: 60px;
@@ -2007,7 +2007,7 @@ body.active {
 	color: #333
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-list {
+.advantage-banner .banner-content .advantage-list {
 	position: relative;
 	opacity: 0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2019,33 +2019,33 @@ body.active {
 	animation: bannerTextShow .25s ease-in .25s 1 forwards
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-list .txt {
+.advantage-banner .banner-content .advantage-list .txt {
 	padding-right: 20px;
 	position: relative
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-list .icon {
+.advantage-banner .banner-content .advantage-list .icon {
 	position: absolute;
 	top: 28px;
 	width: 14px
 }
 
-.class-advantage .advantage-banner .banner-content .advantage-list span {
+.advantage-banner .banner-content .advantage-list span {
 	padding-left: 25px;
 	font-size: 22px;
 	color: #666;
 	line-height: 70px
 }
 
-.class-advantage .advantage-info {
+.advantage-info {
 	padding: 10px 30px 70px
 }
 
-.class-advantage .advantage-info .advantage-target {
+.advantage-info .advantage-target {
 	padding-bottom: 70px
 }
 
-.class-advantage .advantage-info .advantage-target p.target_desc {
+.advantage-info .advantage-target p.target_desc {
 	font-size: 16px;
 	padding-top: 50px;
 	font-weight: 300;
@@ -2054,28 +2054,28 @@ body.active {
 	line-height: 28px
 }
 
-.class-advantage .advantage-info .advantage-target .target-banner {
+.advantage-info .advantage-target .target-banner {
 	width: 100%;
 	padding-top: 95px
 }
 
-.class-advantage .advantage-info .advantage-target .target-banner.target_system {
+.advantage-info .advantage-target .target-banner.target_system {
 	padding-top: 100px;
 	padding-bottom: 70px
 }
 
-.class-advantage .advantage-info .advantage-content ul {
+.advantage-info .advantage-content ul {
 	padding-bottom: 55px;
 	padding-top: 90px
 }
 
-.class-advantage .advantage-info .advantage-content ul li {
+.advantage-info .advantage-content ul li {
 	float: left;
 	width: 25%;
 	text-align: center
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type {
+.advantage-info .advantage-content ul li .content_type {
 	height: 353px;
 	padding: 50px 30px 0;
 	-webkit-transition: all .2s ease;
@@ -2085,7 +2085,7 @@ body.active {
 	transition: all .2s ease
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type:hover {
+.advantage-info .advantage-content ul li .content_type:hover {
 	background: #fff;
 	-webkit-box-shadow: 0 10px 15px 0 rgba(0,0,0,.06),0 15px 40px 0 rgba(0,0,0,.12);
 	box-shadow: 0 10px 15px 0 rgba(0,0,0,.06),0 15px 40px 0 rgba(0,0,0,.12);
@@ -2097,17 +2097,17 @@ body.active {
 	transform: translate3d(0,-4px,0)
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type .type_banner {
+.advantage-info .advantage-content ul li .content_type .type_banner {
 	display: inline-block;
 	width: 110px;
 	height: 110px
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type .type_banner img {
+.advantage-info .advantage-content ul li .content_type .type_banner img {
 	width: 100%
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type h5 {
+.advantage-info .advantage-content ul li .content_type h5 {
 	font-size: 24px;
 	padding: 25px 0 12px;
 	font-weight: 400;
@@ -2115,7 +2115,7 @@ body.active {
 	line-height: 24px
 }
 
-.class-advantage .advantage-info .advantage-content ul li .content_type p.type_desc {
+.advantage-info .advantage-content ul li .content_type p.type_desc {
 	font-size: 14px;
 	font-weight: 300;
 	color: #999;
