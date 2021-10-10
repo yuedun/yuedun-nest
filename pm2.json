@@ -1,7 +1,7 @@
 {
   "apps" : [{
     "name": "nest",
-    "cwd":"/home/yuedun/workspace/yuedun-nest",
+    "cwd":"/home/yuedun/www/yuedun-nest",
     "script"    : "dist/main.js",
     "instances" : "1",
     "exec_mode" : "fork",
